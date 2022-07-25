@@ -4,7 +4,8 @@ import java.util.Date;
 
 public class Menstruacao {
 
-	private Date dt_menstruacao;
+	private Date dt_menstruacao_inicio;
+	private Date dt_menstruacao_fim;
 	private Enum<?> intensidade;
 	
 	
@@ -17,11 +18,17 @@ public class Menstruacao {
 	}
 	
 	
-	public Date getDt_menstruacao() {
-		return dt_menstruacao;
+	public Date getDt_menstruacao_inicio() {
+		return dt_menstruacao_inicio;
 	}
-	public void setDt_menstruacao(Date dt_menstruacao) {
-		this.dt_menstruacao = dt_menstruacao;
+	public void setDt_menstruacao_inicio(Date dt_menstruacao_incio) {
+		this.dt_menstruacao_inicio = dt_menstruacao_inicio;
 	}
 	
+	public Date getDt_menstruacao_fim() {
+		return dt_menstruacao_fim;
+	}
+	public void setDt_menstruacao_fim(Date dt_menstruacao_fim) {
+		this.dt_menstruacao_fim = dt_menstruacao_fim;
+	}
 }
