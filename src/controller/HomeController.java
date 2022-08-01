@@ -10,7 +10,8 @@ import view.Home;
 
 
 public class HomeController {
-	private final Home view;
+	
+	/*private final Home view;
 
 	public HomeController(Home view) {
 		super();
@@ -38,6 +39,6 @@ private Pessoa createModel() {
 
 	public Home getView() {
 		return view;
-	}
+	} */
 }
 

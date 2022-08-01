@@ -13,7 +13,13 @@ import controller.HomeController;
 
 
 public class Home extends JFrame implements ActionListener {
-	private final JLabel labelLogin;
+
+	@Override
+	public void actionPerformed(ActionEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+/*	private final JLabel labelLogin;
 	private final JTextField fieldLogin;
 	private final JLabel labelSenha;
 	private final JTextField fieldSenha;
@@ -84,6 +90,6 @@ public class Home extends JFrame implements ActionListener {
 
 	public HomeController getController() {
 		return controller;
-	}
+	} */
 }
 
