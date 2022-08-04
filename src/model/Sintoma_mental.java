@@ -4,6 +4,12 @@ package model;
 
 
 public class Sintoma_mental extends Sintoma {
+	
+	public enum nome_sintoma_mental {
+		DESEQUILIBRADA, ESTRESSADA, MAL_HUMORADA, CALM, ANSIOSA, ALEGRE, APATICA, SONOLENTA, DESEJO_SALGADO, DESEJO_DOCE, AMOROSA,
+		SENSIVEL, INSEGURA, INSONIA, VERTIGEM;
+	}
+	
 
 	private Enum nome_sintoma_mental;
 	
