@@ -1,5 +1,7 @@
-import model.Sintoma_fisico.*;
-
+import model.*;
+import Database.*;
+import view.*;
+import controller.*;
 import java.util.* ;
 //import javax.swing.WindowConstants;
 
@@ -7,12 +9,12 @@ import java.util.* ;
 public class Main {
 	
 	public static void main(String[] args) {
-	/*	Home home = new Home();
+		Home home = new Home();
 		home.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		home.setVisible(true);
-	*/
+	
 		
-		
+		/*
 	    //listando os locais do corpo
 		System.out.println("Locais do corpo:");
 		for(Local_corpo locais: Local_corpo.values()){

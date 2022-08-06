@@ -5,7 +5,7 @@ public class Pessoa {
 
 //	private String nome_completo;
 //	private Date dt_nascimento;
-/*	private Ciclo ciclo_atual;
+	private String login;
 	private String senha;
 	
 	

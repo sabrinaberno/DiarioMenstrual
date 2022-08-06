@@ -40,23 +40,34 @@ public class Sintoma_fisico extends Sintoma {
 		
 	}
 	
-	public Sintoma_fisico (Enum <> Local_corpo, Enum <> Nome_sintoma_fisico ) {
+	public Sintoma_fisico (enum Local_corpo, enum Nome_sintoma_fisico) {
 		//descobrir como chamar um enum
 		super (data_cadastro, intensidade);
 		this.Local_corpo = Local_corpo;
 		this.Nome_sintoma_fisico = Nome_sintoma_fisico;
 		
-		
 	}
 	
 	// https://www.w3schools.com/java/java_enums.asp
 	
-	public void getLocal_corpo (){
-		System.out.println("Locais do corpo:");
-		for(Local_corpo locais: Local_corpo.values()){
-			System.out.println(locais);
-		}
+	public enum getLocal_corpo (){
+		return
 	}
 	
+	public enum setLocal_corpo (enum Local_corpo) {
+		this.Local_corpo = Local_corpo;
+	}
+	
+	public enum getNome_sintoma_fisico () {
+		return Nome_sintoma_fisico;
+	}
+	
+	public enum setNome_sintoma_fisico (enum Nome_sintoma_fisico) {
+		this.Nome_sintoma_fisico = Nome_sintoma_fisico;
+	}
+	
+	public editarSintoma_fisico (enum Local_corpo, enum Nome_sintoma_fisico) {
+		this.setLocal_corpo;
+	}
 	
 }
