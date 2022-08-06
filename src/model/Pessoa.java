@@ -5,8 +5,13 @@ public class Pessoa {
 
 //	private String nome_completo;
 //	private Date dt_nascimento;
-	private String login;
+/*	private Ciclo ciclo_atual;
 	private String senha;
+	
+	
+	public Pessoa() {
+		
+	}
 	
 	public Pessoa(String login, String senha) {
 		super();
@@ -14,11 +19,6 @@ public class Pessoa {
 		this.senha = senha;
 	}
 
-	public Pessoa() {
-		super();
-		this.login = null;
-		this.senha = null;
-	}
 	
 	
 	public String getLogin() {
@@ -38,4 +38,5 @@ public class Pessoa {
 	public String toString() {
 		return "Pessoa [login=" + login + ", senha=" + senha + "]";
 	}
+	*/
 }

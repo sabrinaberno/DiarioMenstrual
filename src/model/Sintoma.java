@@ -1,12 +1,12 @@
 package model;
 
-import java.util.Date;
+import java.util.*;
 
 
 public abstract class Sintoma {
 	
 	//Atributos
-	private Date data_do_cadastro;
+	private String data_do_cadastro;
 	private enum intensidade
        
 	//declarando o enum de intensidade
@@ -18,24 +18,31 @@ public abstract class Sintoma {
 	private Scanner ler = new Scanner(System.in);// Para realizar os metodos
 
 	// Metodo Construtor de Sintoma
-	public Sintoma(Date data_do_cadastro, enum intensidade, ) {
-		this.data_do_cadastro =data_do_cadastro;
+	public Sintoma(String data_do_cadastro, enum intensidade, ) {
+		
+		super();
+		this.data_do_cadastro = data_do_cadastro;
 		this.intensidade = intensidade;
+		
 	}
 	// //declarando os atributos da classe pai Sintoma
-	public Date getData_do_cadastro() {
+	public String getData_do_cadastro() {
 		return data_do_cadastro;
 	}
-	public void setData_do_cadastro(Date data_do_cadastro) {
+	
+	public void setData_do_cadastro(String data_do_cadastro) {
 		this.data_do_cadastro = data_do_cadastro;
 	}
+	
 	public enum getIntensidade() {
 		return intensidade;
 	}
+	
 	public void setIntensidade(enum intensidade) {
 		this.intensidade = intensidade;
 	}
 	
+	/*
 	// Metodos
 	public void cadastrarSintoma() {
 		System.out.print("\nQual dia é hoje");
@@ -82,4 +89,5 @@ public abstract class Sintoma {
 		System.out.println("\nPressione Enter para continuar...");
 		ler.nextLine();
 	}
+	*/
 }
