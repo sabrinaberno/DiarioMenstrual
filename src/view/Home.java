@@ -14,7 +14,6 @@ import java.text.ParseException;
 import java.awt.event.ActionEvent;
 import java.awt.Font;
 
-import controller.HomeController;
 
 
 public class Home extends JFrame {
@@ -39,74 +38,28 @@ public class Home extends JFrame {
 		contentPane.add(panel, BorderLayout.CENTER);
 		panel.setLayout(new GridLayout(8, 1, 0, 0));
 		
+		JButton btnCadastrarCiclo = new JButton("Cadastrar Novo Ciclo");
+		btnCadastrarCiclo.setFont(new Font("Times New Roman", Font.PLAIN, 18));
+		btnCadastrarCiclo.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				JFrame tela = null;
+				try {
+					tela = new CadastrarCiclo();
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+
+				tela.setVisible(true);
+				setVisible(false);
+			}
+		});
+
+		panel.add(btnCadastrarCiclo);
+
 		
 		
 		
-		
-		
-		super("My Home Page");
-		
-		this.controller = new HomeController(this);
-
-		this.setSize(900, 700);
-		this.setLayout(new GridLayout(3, 2));
-
-		this.labelLogin = new JLabel("Login:");
-		this.add(this.labelLogin);
-
-		this.fieldLogin = new JTextField();
-		this.add(this.fieldLogin);
-		
-		this.labelSenha = new JLabel("Senha:");
-		this.add(this.labelSenha);
-
-		this.fieldSenha = new JTextField();
-		this.add(this.fieldSenha);
-
-		this.cadastrar = new JButton("Cadastrar");
-		this.cadastrar.addActionListener(this);
-		this.add(this.cadastrar);
-
-		this.cancelar = new JButton("Cancelar");
-		this.cancelar.addActionListener(this);
-		this.add(this.cancelar);
 	}
-
-	@Override
-	public void actionPerformed(ActionEvent e) {
-		this.controller.executarBotao(e);
-	}
-
-	public JLabel getLabelLogin() {
-		return labelLogin;
-	}
-
-	public JTextField getFieldLogin() {
-		return fieldLogin;
-	}
-
-	
-	public JLabel getLabelSenha() {
-		return labelSenha;
-	}
-
-	public JTextField getFieldSenha() {
-		return fieldSenha;
-	}
-	
-	
-
-	public JButton getCadastrar() {
-		return cadastrar;
-	}
-
-	
-	public JButton getCancelar() {
-		return cancelar;
-	}
-
-	public HomeController getController() {
-		return controller;
-	} 
 }
 
