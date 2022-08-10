@@ -2,24 +2,42 @@ package model;
 
 import java.util.*;
 
-
 public abstract class Sintoma {
 	
 	//Atributos
 	private String data_do_cadastro;
-	private enum intensidade
        
 	//declarando o enum de intensidade
-    public enum intensidade{
-    	FRACA, RAZOAVEL, INSUPORTAVEL;
+    public enum Intensidade{
+    	FRACA(1), RAZOAVEL(2), INSUPORTAVEL(3);
+    	
+    	private final int valor;
+		
+    	Intensidade(int valor){
+			this.valor = valor;
+		}
+
+		int getValor() {
+			return valor;
+		}
+		
+		//Método Static para display o sintoma
+		public static void display (int valor) {
+			Intensidade constant[] = Intensidade.values();
+		}
+		
     }
     
     
-	private Scanner ler = new Scanner(System.in);// Para realizar os metodos
-
+    // declarando uma variável para guardar o enum
+ 	private Intensidade intensidade;
+ 	
+ 	public Sintoma () {
+ 		
+ 	}
+    
 	// Metodo Construtor de Sintoma
-	public Sintoma(String data_do_cadastro, enum intensidade, ) {
-		
+	public Sintoma (String data_do_cadastro, Intensidade intensidade) {
 		super();
 		this.data_do_cadastro = data_do_cadastro;
 		this.intensidade = intensidade;
@@ -34,11 +52,11 @@ public abstract class Sintoma {
 		this.data_do_cadastro = data_do_cadastro;
 	}
 	
-	public enum getIntensidade() {
+	public Intensidade getIntensidade() {
 		return intensidade;
 	}
 	
-	public void setIntensidade(enum intensidade) {
+	public void setIntensidade(Intensidade intensidade) {
 		this.intensidade = intensidade;
 	}
 	
