@@ -6,7 +6,7 @@ import javax.swing.JButton;
 
 import Database.DB;
 import model.Pessoa;
-import view.Home;
+import view.TelaInicial;
 
 
 public class HomeController {
