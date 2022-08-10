@@ -1,26 +1,21 @@
 package model;
 
-import java.util.*;
-
-@SuppressWarnings("unused")
 public class Ciclo {
   // Atributos
   private String data_inicial;
   private int duracao;
   private String dia_final_menstruacao;
-  private String previsao_ovulacao;
   
   // Metodo Construtor de Ciclo
   public Ciclo () {
 	  
   }
   
-  	public Ciclo (String data_incial, int duracao, String dia_final_menstruacao, String previsao_ovulacao ) {
+  	public Ciclo (String data_inicial, int duracao, String dia_final_menstruacao, String previsao_ovulacao ) {
 		
   		this.data_inicial = data_inicial;
 		this.duracao = duracao;
 		this.dia_final_menstruacao = dia_final_menstruacao;
-		this. previsao_ovulacao =  previsao_ovulacao;
 		
 	}
 	// Getters e Setters

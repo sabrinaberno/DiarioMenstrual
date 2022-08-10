@@ -8,17 +8,17 @@ public class Pessoa {
 	private String login;
 	private String senha;
 	
+	
+	public Pessoa() {
+		
+	}
+	
 	public Pessoa(String login, String senha) {
 		super();
 		this.login = login;
 		this.senha = senha;
 	}
 
-	public Pessoa() {
-		super();
-		this.login = null;
-		this.senha = null;
-	}
 	
 	
 	public String getLogin() {
@@ -38,4 +38,5 @@ public class Pessoa {
 	public String toString() {
 		return "Pessoa [login=" + login + ", senha=" + senha + "]";
 	}
+	
 }
