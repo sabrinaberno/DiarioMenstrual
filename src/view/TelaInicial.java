@@ -29,11 +29,13 @@ import java.awt.Font;
 public class TelaInicial implements ActionListener {
 
 		private static JFrame janela = new JFrame("Meu Diário Menstrual");
-		private static JLabel titulo = new JLabel("Menu Principal");
-		private static JButton cadastro_usuario = new JButton("Cadastrar Usuário");
+		private static JLabel titulo = new JLabel("Escolha qual ação você deseja executar");
+		private static JButton cadastro_usuario = new JButton("Cadastrar Pessoa");
 		private static JButton cadastro_ciclo = new JButton("Cadastrar novo Ciclo Menstrual");
 		private static JButton cadastro_sintoma_fisico = new JButton("Cadastrar um Sintoma Físico");
 		private static JButton cadastro_sintoma_mental = new JButton("Cadastrar um Sintoma Mental");
+		private static JButton relatorio = new JButton("Relatórios");
+
 	//	public static ControleDados dados = new ControleDados();
 	 
 		private JPanel pane;
@@ -42,23 +44,34 @@ public class TelaInicial implements ActionListener {
 		public TelaInicial() {
 				
 			janela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-			janela.setSize(400, 250);
+			//janela.setSize(400, 250);
 			
 			janela.setBounds(100, 100, 600, 600);
-			titulo.setBounds(50, 10, 600, 600);
+			titulo.setBounds(50, 0, 500, 50);
 
 			//janela.setContentPane(pane);	
 			pane = new JPanel (); 
 			pane.setBorder(new EmptyBorder(5, 5, 5, 5));
 			pane.setLayout(new BorderLayout(0, 0));
+
 			
 			titulo.setFont(new Font("Arial", Font.BOLD, 20));
 			titulo.setHorizontalAlignment(SwingConstants.CENTER);
-			pane.add(titulo, BorderLayout.NORTH);
 			
-			//pane.add(janela, BorderLayout.CENTER);
-			//janela.setLayout(new GridLayout(8, 1, 0, 0));
+			cadastro_usuario.setFont(new Font("Arial", Font.PLAIN, 20));
+			cadastro_usuario.setBounds(50, 70, 500, 50);
 
+			cadastro_ciclo.setFont(new Font("Arial", Font.PLAIN, 20));
+			cadastro_ciclo.setBounds(50, 150, 500, 50);
+			
+			cadastro_sintoma_fisico.setFont(new Font("Arial", Font.PLAIN, 20));
+			cadastro_sintoma_fisico.setBounds(50, 230, 500, 50);
+			
+			cadastro_sintoma_mental.setFont(new Font("Arial", Font.PLAIN, 20));
+			cadastro_sintoma_mental.setBounds(50, 310, 500, 50);
+			
+			relatorio.setFont(new Font("Arial", Font.PLAIN, 20));
+			relatorio.setBounds(50, 390, 500, 50);
 			
 			janela.setLayout(null);
 			
@@ -67,6 +80,7 @@ public class TelaInicial implements ActionListener {
 			janela.add(cadastro_ciclo);
 			janela.add(cadastro_sintoma_fisico);
 			janela.add(cadastro_sintoma_mental);
+			janela.add(relatorio);
 
 			janela.setVisible(true);
 		}
