@@ -2,31 +2,19 @@ package view;
 
 import java.awt.*;
 import java.awt.event.*;
-import java.util.Scanner;
-
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
+import javax.swing.JComponent;
 
-import controller.HomeController;
-import model.*;
 import model.Sintoma_fisico.Local_corpo;
 import model.Sintoma_fisico.Nome_sintoma_fisico;
 
-import java.awt.BorderLayout;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-
-import javax.swing.JLabel;
-import java.awt.GridLayout;
-import javax.swing.JButton;
-import javax.swing.SwingConstants;
 import java.awt.event.ActionListener;
 import java.text.ParseException;
 import java.awt.event.ActionEvent;
-import java.awt.Font;
 
-public class TelaInicial implements ActionListener {
+
+public class TelaInicial extends JFrame implements ActionListener {
 
 		private static JFrame janela = new JFrame("Meu Diário Menstrual");
 		private static JLabel titulo = new JLabel("Escolha qual ação você deseja executar");
@@ -58,9 +46,22 @@ public class TelaInicial implements ActionListener {
 			titulo.setFont(new Font("Arial", Font.BOLD, 20));
 			titulo.setHorizontalAlignment(SwingConstants.CENTER);
 			
+			
+			janela.setLayout(null);
+			
+			janela.add(titulo);
+			janela.add(cadastro_usuario);
+			janela.add(cadastro_ciclo);
+			janela.add(cadastro_sintoma_fisico);
+			janela.add(cadastro_sintoma_mental);
+			janela.add(relatorio);
+
+			janela.setVisible(true);
+			
+			
 			cadastro_usuario.setFont(new Font("Arial", Font.PLAIN, 20));
 			cadastro_usuario.setBounds(50, 70, 500, 50);
-
+			
 			cadastro_ciclo.setFont(new Font("Arial", Font.PLAIN, 20));
 			cadastro_ciclo.setBounds(50, 150, 500, 50);
 			
@@ -73,28 +74,49 @@ public class TelaInicial implements ActionListener {
 			relatorio.setFont(new Font("Arial", Font.PLAIN, 20));
 			relatorio.setBounds(50, 390, 500, 50);
 			
-			janela.setLayout(null);
 			
-			janela.add(titulo);
-			janela.add(cadastro_usuario);
-			janela.add(cadastro_ciclo);
-			janela.add(cadastro_sintoma_fisico);
-			janela.add(cadastro_sintoma_mental);
-			janela.add(relatorio);
-
-			janela.setVisible(true);
 		}
+		
 		
 		public static void main(String[] args) {
 			TelaInicial menu = new TelaInicial();
 			
+						
 			cadastro_usuario.addActionListener(menu);
 			cadastro_ciclo.addActionListener(menu);
 			cadastro_sintoma_fisico.addActionListener(menu);
 			cadastro_sintoma_mental.addActionListener(menu);
+			relatorio.addActionListener(menu);
+		}
+
+		public void actionPerformed(ActionEvent e) {
+			Object click = e.getSource();
 			
+			if(click == cadastro_usuario)
+				new CadastrarPessoa();
 			
-			//listando os locais do corpo
+			if(click == cadastro_ciclo)
+				new CadastrarCiclo();
+			
+			if(click == cadastro_sintoma_fisico)
+				new CadastrarSintomaFisico();
+			
+			if(click == cadastro_sintoma_mental)
+				new CadastrarSintomaMental();
+			
+			if(click == relatorio)
+				new TelaRelatorio();
+		
+		}
+		
+		
+		
+						
+			
+	}
+	/*
+	
+	// listando os locais do corpo
 			System.out.println("Locais do corpo:");
 			for(Local_corpo locais: Local_corpo.values()){
 				System.out.println(locais);
@@ -108,17 +130,6 @@ public class TelaInicial implements ActionListener {
 			for(Nome_sintoma_fisico nome_fisico : Nome_sintoma_fisico.values()){
 				System.out.println(nome_fisico);
 			}
-		
-		}
-		
-		public void actionPerformed(ActionEvent e) {
-			
-		}
-	/*public void actionPerformed(ActionEvent arg0) {
-		// TODO Auto-generated method stub
-		
-	}
-	
 	private final HomeController controller;
 
 	public Home() {
@@ -149,41 +160,6 @@ public class TelaInicial implements ActionListener {
 		this.add(this.cancelar);
 	}
 
-	@Override
-	public void actionPerformed(ActionEvent e) {
-		this.controller.executarBotao(e);
-	}
+	*/
 
-	public JLabel getLabelLogin() {
-		return labelLogin;
-	}
-
-	public JTextField getFieldLogin() {
-		return fieldLogin;
-	}
-
-	
-	public JLabel getLabelSenha() {
-		return labelSenha;
-	}
-
-	public JTextField getFieldSenha() {
-		return fieldSenha;
-	}
-	
-	
-
-	public JButton getCadastrar() {
-		return cadastrar;
-	}
-
-	
-	public JButton getCancelar() {
-		return cancelar;
-	}
-
-	public HomeController getController() {
-		return controller;
-	} */
-}
 

@@ -7,9 +7,6 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.text.MaskFormatter;
 
-import Controller.Main;
-import Model.Cliente;
-
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JButton;
@@ -26,8 +23,8 @@ import java.awt.Color;
 
 
 
-public class CadastrarCiclo extends JFrame {
-	static ArrayList<Ciclo> ciclos = new ArrayList<Ciclo>();
+public class CadastrarCiclo {
+	/* static ArrayList<Ciclo> ciclos = new ArrayList<Ciclo>();
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
@@ -66,6 +63,6 @@ public class CadastrarCiclo extends JFrame {
 
 		JFormattedTextField view_data_menstruação_final = new JFormattedTextField(new MaskFormatter("##/##/####"));
 		panel.add(view_data_menstruação_final);
-	}
+	} */
 }
 
