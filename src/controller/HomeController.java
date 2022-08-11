@@ -2,13 +2,13 @@ package controller;
 
 import java.awt.event.ActionEvent;
 import javax.swing.JButton;
-import Database.*
+import Database.*;
 import view.*;
 import model.*;
 
 public class HomeController {
 	
-	private final Home view;
+	/*private final Home view;
 
 	public HomeController(Home view) {
 		super();
@@ -36,6 +36,6 @@ public class HomeController {
 
 	public Home getView() {
 		return view;
-	}
+	} */
 }
 

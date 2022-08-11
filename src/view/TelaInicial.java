@@ -1,11 +1,18 @@
 package view;
 
-import java.awt.*;
-import javax.swing.*;
+import java.awt.BorderLayout;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import javax.swing.JLabel;
+import java.awt.GridLayout;
+import javax.swing.JButton;
+import javax.swing.SwingConstants;
 import java.awt.event.ActionListener;
+import java.text.ParseException;
 import java.awt.event.ActionEvent;
+import java.awt.Font;
 
 
 public class TelaInicial extends JFrame implements ActionListener {
@@ -17,10 +24,10 @@ public class TelaInicial extends JFrame implements ActionListener {
 		private static JButton cadastro_sintoma_fisico = new JButton("Cadastrar um Sintoma Físico");
 		private static JButton cadastro_sintoma_mental = new JButton("Cadastrar um Sintoma Mental");
 		private static JButton relatorio = new JButton("Relatórios");
+		private JPanel painel = new JPanel (); 
 
 	//	public static ControleDados dados = new ControleDados();
 	 
-		private JPanel pane;
 		private static final long serialVersionUID = 1L;
 
 		
@@ -33,9 +40,8 @@ public class TelaInicial extends JFrame implements ActionListener {
 			titulo.setBounds(50, 0, 500, 50);
 
 			//janela.setContentPane(pane);	
-			pane = new JPanel (); 
-			pane.setBorder(new EmptyBorder(5, 5, 5, 5));
-			pane.setLayout(new BorderLayout(0, 0));
+			painel.setBorder(new EmptyBorder(5, 5, 5, 5));
+			painel.setLayout(new BorderLayout(0, 0));
 
 			
 			titulo.setFont(new Font("Arial", Font.BOLD, 20));
@@ -86,21 +92,37 @@ public class TelaInicial extends JFrame implements ActionListener {
 
 		public void actionPerformed(ActionEvent e) {
 			Object click = e.getSource();
-			
-			if(click == cadastro_usuario)
+			//JFrame tela = null;
+
+			if(click == cadastro_usuario) {
 				new CadastrarPessoa();
+				janela.setVisible(false);
+			}
+				
 			
-			if(click == cadastro_ciclo)
+			if(click == cadastro_ciclo) {
 				new CadastrarCiclo();
+				janela.setVisible(false);
+			}
+				
 			
-			if(click == cadastro_sintoma_fisico)
+			if(click == cadastro_sintoma_fisico) {
 				new CadastrarSintomaFisico();
+				janela.setVisible(false);
+			}
+				
 			
-			if(click == cadastro_sintoma_mental)
+			if(click == cadastro_sintoma_mental) {
 				new CadastrarSintomaMental();
+				janela.setVisible(false);
+			}
+				
 			
-			if(click == relatorio)
+			if(click == relatorio) {
 				new TelaRelatorio();
+				janela.setVisible(false);
+			}
+				
 		
 		}
 		
