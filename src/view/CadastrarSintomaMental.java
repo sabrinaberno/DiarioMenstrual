@@ -4,24 +4,15 @@ import java.awt.BorderLayout;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import javax.swing.text.MaskFormatter;
-import javax.swing.text.NumberFormatter;
-
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
-import java.awt.GridLayout;
-import java.text.ParseException;
-
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
 import java.awt.Font;
-import java.awt.Color;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import javax.swing.JFormattedTextField;
 import javax.swing.JComboBox;
 
 import model.Sintoma.Intensidade;
@@ -36,7 +27,8 @@ public class CadastrarSintomaMental extends JFrame implements ActionListener {
 	private static JLabel titulo = new JLabel("Cadastro de Sintoma Mental");
 	private JComboBox <Intensidade> intensidade = new JComboBox<>();
 	private JComboBox <Nome_sintoma_mental> nomeSintoma = new JComboBox<>();
-	private JButton cadastrar = new JButton("Cadastrar Sintoma");
+	private JButton cadastrar = new JButton("Cadastrar");
+	private JButton cancelar = new JButton("Cancelar");
 	private JLabel dataTxt = new JLabel("Data do sintoma mental (Ex: 15/02/2022): ");
 	//private JFormattedTextField dataInicialInput = new JFormattedTextField(new MaskFormatter("##/##/####"));
 	JTextField data = new JTextField();
@@ -86,16 +78,13 @@ public class CadastrarSintomaMental extends JFrame implements ActionListener {
 		janela.add(intensidade);
 		
 		
-		
-		
 		cadastrar.setFont(new Font("Times New Roman", Font.PLAIN, 18));
-		cadastrar.setBounds(50, 480, 500, 50);
+		cadastrar.setBounds(50, 480, 240, 50);
 		janela.add(cadastrar);
 		
-		
-		
-		
-		
+		cancelar.setFont(new Font("Times New Roman", Font.PLAIN, 18));
+		cancelar.setBounds(310, 480, 240, 50);
+		janela.add(cancelar);
 		
 		
 		janela.setLayout(null);
@@ -105,12 +94,16 @@ public class CadastrarSintomaMental extends JFrame implements ActionListener {
 	}
 	
 	
-	
-	
-	
 	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
-		
+		Object click = e.getSource();
+
+		if(click == cadastrar) {
+			janela.dispose();
+		//	TelaInicial.main(args: null);
+			
+			janela.setVisible(false);
+		}
+			
 	}
 
 

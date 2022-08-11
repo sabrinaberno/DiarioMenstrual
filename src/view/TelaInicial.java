@@ -6,11 +6,9 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import javax.swing.JLabel;
-import java.awt.GridLayout;
 import javax.swing.JButton;
 import javax.swing.SwingConstants;
 import java.awt.event.ActionListener;
-import java.text.ParseException;
 import java.awt.event.ActionEvent;
 import java.awt.Font;
 
@@ -92,7 +90,6 @@ public class TelaInicial extends JFrame implements ActionListener {
 
 		public void actionPerformed(ActionEvent e) {
 			Object click = e.getSource();
-			//JFrame tela = null;
 
 			if(click == cadastro_usuario) {
 				new CadastrarPessoa();
