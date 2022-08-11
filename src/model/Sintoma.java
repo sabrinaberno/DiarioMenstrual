@@ -1,7 +1,5 @@
 package model;
 
-import java.util.*;
-
 public abstract class Sintoma {
 	
 	//Atributos
@@ -23,7 +21,7 @@ public abstract class Sintoma {
 		
 		//Método Static para display o sintoma
 		public static void display (int valor) {
-			Intensidade constant[] = Intensidade.values();
+			//Intensidade constant[] = Intensidade.values();
 		}
 		
     }

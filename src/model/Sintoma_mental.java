@@ -19,7 +19,7 @@ public class Sintoma_mental extends Sintoma {
 		
 		//Método Static para display o sintoma
 		public static void display (int valor) {
-			Nome_sintoma_mental constant[] = Nome_sintoma_mental.values();
+			//Nome_sintoma_mental constant[] = Nome_sintoma_mental.values();
 		}
 	
 	}
@@ -35,8 +35,7 @@ public class Sintoma_mental extends Sintoma {
 	
 	// Getters e Setters
 	public Nome_sintoma_mental getSintoma_mental() {
-		// Nome_sintoma_mental constant[] = Nome_sintoma_mental.values();
-
+		//Nome_sintoma_mental constant[] = Nome_sintoma_mental.values();
 		
 		return nome_sintoma_mental;
 	}

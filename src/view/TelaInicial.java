@@ -1,21 +1,15 @@
 package view;
 
 import java.awt.*;
-import java.awt.event.*;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
-import javax.swing.JComponent;
-
-import model.Sintoma_fisico.Local_corpo;
-import model.Sintoma_fisico.Nome_sintoma_fisico;
 
 import java.awt.event.ActionListener;
-import java.text.ParseException;
 import java.awt.event.ActionEvent;
 
 
 public class TelaInicial extends JFrame implements ActionListener {
-
+	
 		private static JFrame janela = new JFrame("Meu Diário Menstrual");
 		private static JLabel titulo = new JLabel("Escolha qual ação você deseja executar");
 		private static JButton cadastro_usuario = new JButton("Cadastrar Pessoa");
@@ -27,6 +21,7 @@ public class TelaInicial extends JFrame implements ActionListener {
 	//	public static ControleDados dados = new ControleDados();
 	 
 		private JPanel pane;
+		private static final long serialVersionUID = 1L;
 
 		
 		public TelaInicial() {
