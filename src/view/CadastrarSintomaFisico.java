@@ -17,6 +17,7 @@ import javax.swing.JComboBox;
 
 import model.Sintoma.Intensidade;
 import model.Sintoma_fisico.Local_corpo;
+import model.Sintoma_fisico.Nome_sintoma_fisico;
 import model.Sintoma_mental.Nome_sintoma_mental;
 
 
@@ -27,7 +28,7 @@ public class CadastrarSintomaFisico extends JFrame implements ActionListener {
 	private static JFrame janela = new JFrame("Sintoma Físico");
 	private static JLabel titulo = new JLabel("Cadastro de Sintoma Físico");
 	private JComboBox <Intensidade> intensidade = new JComboBox<>();
-	private JComboBox <Nome_sintoma_mental> nomeSintoma = new JComboBox<>();
+	private JComboBox <Nome_sintoma_fisico> nomeSintoma = new JComboBox<>();
 	private JComboBox <Local_corpo> localSintoma = new JComboBox<>();
 	private JButton cadastrar = new JButton("Cadastrar");
 	private JButton cancelar = new JButton("Cancelar");
@@ -66,7 +67,7 @@ public class CadastrarSintomaFisico extends JFrame implements ActionListener {
 		nomeTxt.setFont(new Font("Times New Roman", Font.PLAIN, 18));
 		nomeTxt.setBounds(50, 180, 400, 20);		
 		nomeSintoma.setFont(new Font("Times New Roman", Font.PLAIN, 18));
-		nomeSintoma.setModel(new DefaultComboBoxModel<>(Nome_sintoma_mental.values()));
+		nomeSintoma.setModel(new DefaultComboBoxModel<>(Nome_sintoma_fisico.values()));
 		nomeSintoma.setBounds(50, 210, 500, 30);
 		janela.add(nomeTxt);
 		janela.add(nomeSintoma); 
@@ -102,7 +103,9 @@ public class CadastrarSintomaFisico extends JFrame implements ActionListener {
 		janela.setLayout(null);
 		janela.setVisible(true);
 		
-		
+				
+		cadastrar.addActionListener(this);
+		cancelar.addActionListener(this);
 	}
 	
 	
@@ -110,9 +113,12 @@ public class CadastrarSintomaFisico extends JFrame implements ActionListener {
 		Object click = e.getSource();
 
 		if(click == cadastrar) {
-			janela.dispose();
-		//	TelaInicial.main(args: null);
-			
+			new TelaInicial();
+			janela.setVisible(false);
+		} 
+		
+		if(click == cancelar) {
+			new TelaInicial();
 			janela.setVisible(false);
 		}
 			

@@ -90,7 +90,8 @@ public class CadastrarSintomaMental extends JFrame implements ActionListener {
 		janela.setLayout(null);
 		janela.setVisible(true);
 		
-		
+		cadastrar.addActionListener(this);
+		cancelar.addActionListener(this);
 	}
 	
 	
@@ -98,9 +99,12 @@ public class CadastrarSintomaMental extends JFrame implements ActionListener {
 		Object click = e.getSource();
 
 		if(click == cadastrar) {
-			janela.dispose();
-		//	TelaInicial.main(args: null);
-			
+			new TelaInicial();
+			janela.setVisible(false);
+		} 
+		
+		if(click == cancelar) {
+			new TelaInicial();
 			janela.setVisible(false);
 		}
 			
