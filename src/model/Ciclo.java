@@ -1,40 +1,36 @@
 package model;
 
+
 public class Ciclo {
-  // Atributos
-  private String data_inicial;
-  private int duracao;
-  private String dia_final_menstruacao;
-  
-  // Metodo Construtor de Ciclo
-  public Ciclo () {
-	  
-  }
-  
-  	public Ciclo (String data_inicial, int duracao, String dia_final_menstruacao, String previsao_ovulacao ) {
-		
-  		this.data_inicial = data_inicial;
-		this.duracao = duracao;
-		this.dia_final_menstruacao = dia_final_menstruacao;
+	
+	private String dtInicial;
+	private String dtFinal;
+	private Pessoa pessoa;
+	
+	
+	public Ciclo() {
+			
 		
 	}
-	// Getters e Setters
-	public String getData_inicial() {
-		return data_inicial;
+		
+	public String getDtInicial() {
+		return dtInicial;
 	}
-	public void setData_incial(String data_incial) {
-		this.data_inicial = data_incial;
+	public void setDtInicial(String dtInicial) {
+		this.dtInicial = dtInicial;
 	}
-	public int getDuracao() {
-		return duracao;
+	public String getDtFinal() {
+		return dtFinal;
 	}
-	public void setDuracao(int duracao) {
-		this.duracao = duracao;
+	public void setDtFinal(String dtFinal) {
+		this.dtFinal = dtFinal;
 	}
-	public String getDia_final_menstruacao() {
-		return dia_final_menstruacao;
+	public Pessoa getPessoa() {
+		return pessoa;
 	}
-	public void setDia_final_menstruacao(String dia_final_menstruacao) {
-		this.dia_final_menstruacao = dia_final_menstruacao;
+	public void setPessoa(Pessoa pessoa) {
+		this.pessoa = pessoa;
 	}
-}
+	
+	}
+	
