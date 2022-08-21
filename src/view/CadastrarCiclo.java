@@ -6,8 +6,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.text.MaskFormatter;
 import javax.swing.text.NumberFormatter;
-
-
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.GridLayout;
 import java.text.ParseException;
@@ -46,6 +45,7 @@ public class CadastrarCiclo extends JFrame implements ActionListener {
 	public CadastrarCiclo ()
 		{
 			
+		
 			janela.setBounds(100, 100, 600, 600);
 			painel.setBorder(new EmptyBorder(5, 5, 5, 5));
 			painel.setLayout(new BorderLayout(0, 0));
@@ -54,32 +54,38 @@ public class CadastrarCiclo extends JFrame implements ActionListener {
 			painel.setLayout(new BorderLayout(0, 0));
 					
 
-			titulo.setFont(new Font("Arial", Font.BOLD, 18));
+			titulo.setFont(new Font("Arial", Font.BOLD, 22));
 			titulo.setHorizontalAlignment(SwingConstants.CENTER);
 			titulo.setBounds(50, 0, 500, 50);
 			janela.add(titulo);
 			
 			
+			dataInicioTxt.setFont(new Font("DIALOG_INPUT", Font.PLAIN, 18));
+			dataInicioTxt.setBounds(50, 130, 400, 20);	
 			dataInicioTxt.setFont(new Font("Times New Roman", Font.PLAIN, 18));
-			dataInicioTxt.setBounds(50, 130, 400, 20);			
 			dataInicio.setBounds(50, 180, 500, 30);
 			dataInicio.setColumns(10);			
 			janela.add(dataInicio);
 			janela.add(dataInicioTxt);
 			
-			dataFinalTxt.setFont(new Font("Times New Roman", Font.PLAIN, 18));
+			dataFinalTxt.setFont(new Font("DIALOG_INPUT", Font.PLAIN, 18));
 			dataFinalTxt.setBounds(50, 290, 400, 20);
+			dataFinalTxt.setFont(new Font("Times New Roman", Font.PLAIN, 18));
 			dataFinal.setBounds(50, 340, 500, 30);
 			dataFinal.setColumns(10);
 			janela.add(dataFinal);
 			janela.add(dataFinalTxt);				
 			
 			
-			cadastrar.setFont(new Font("Times New Roman", Font.PLAIN, 18));
+			cadastrar.setFont(new Font("DIALOG_INPUT", Font.PLAIN, 18));
+			cadastrar.setBackground(Color.pink);
+			cadastrar.setForeground(Color.BLACK);
 			cadastrar.setBounds(50, 480, 240, 50);
 			janela.add(cadastrar);		
 			
-			cancelar.setFont(new Font("Times New Roman", Font.PLAIN, 18));
+			cancelar.setFont(new Font("DIALOG_INPUT", Font.PLAIN, 18));
+			cancelar.setBackground(Color.lightGray);
+			cancelar.setForeground(Color.BLACK);
 			cancelar.setBounds(310, 480, 240, 50);
 			janela.add(cancelar);
 			
@@ -87,20 +93,31 @@ public class CadastrarCiclo extends JFrame implements ActionListener {
 			janela.setLayout(null);
 			janela.setVisible(true);
 			
-			
+			cadastrar.addActionListener(this);
+			cancelar.addActionListener(this);
 		}
-		
-		
-		
 		
 		
 		public void actionPerformed(ActionEvent e) {
-			// TODO Auto-generated method stub
+			Object click = e.getSource();
+
+			if(click == cadastrar) {
+				new TelaInicial();
+				janela.setVisible(false);
+			} 
 			
+			if(click == cancelar) {
+				new TelaInicial();
+				janela.setVisible(false);
+			}
+				
 		}
+			
+			
+		
 
 
 
 
-
+	}
 	}
