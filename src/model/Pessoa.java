@@ -1,42 +1,36 @@
 package model;
 
-
-public class Pessoa {
-
-//	private String nome_completo;
-//	private Date dt_nascimento;
-	private String login;
-	private String senha;
+public class Pessoa {		
+		private String nome;
+		private String dtNascimento;		
 	
-	
-	public Pessoa() {
+	public Pessoa(String nome, String dtNascimento) {
 		
-	}
-	
-	public Pessoa(String login, String senha) {
-		super();
-		this.login = login;
-		this.senha = senha;
+		this.nome = nome;
+		this.dtNascimento = dtNascimento;	
+		
+				
 	}
 
-	
-	
-	public String getLogin() {
-		return login;
+	public String getNome() {
+		return nome;
 	}
-	public void setLogin(String login) {
-		this.login = login;
+
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
-	public String getSenha() {
-		return senha;
+
+	public  String getDtNascimento() {
+		return dtNascimento;
 	}
-	public void setSenha(String senha) {
-		this.senha = senha;
+
+	public void setDtNascimento( String dtNascimento) {
+		this.dtNascimento = dtNascimento;
 	}
 
 	@Override
 	public String toString() {
-		return "Pessoa [login=" + login + ", senha=" + senha + "]";
+		return "Pessoa [Nome= "+ nome +", Nascimento= "+ dtNascimento +" ]";
 	}
-	
 }
+	
