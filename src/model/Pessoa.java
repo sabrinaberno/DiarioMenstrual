@@ -1,42 +1,50 @@
 package model;
 
+/**
+* Classe Pessoa simula o comportamento de uma pessoa.
+* @author Mylena e Sabrina.
+* @since 2022
+* @version 1.0
+**/
 
 public class Pessoa {
+	public String nome;
+	public String nascimento;
+	
 
-//	private String nome_completo;
-//	private Date dt_nascimento;
-	private String login;
-	private String senha;
 	
-	
-	public Pessoa() {
+	public Pessoa(String n, String nc) {
+		nome=n;
+		nascimento=nc;
+		
 		
 	}
-	
-	public Pessoa(String login, String senha) {
-		super();
-		this.login = login;
-		this.senha = senha;
+
+	public String getNome() {
+		return nome;
+	}
+
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+
+	public String getNascimento() {
+		return nascimento;
+	}
+	public void setNascimento(String nascimento) {
+		this.nascimento = nascimento;
 	}
 
 	
-	
-	public String getLogin() {
-		return login;
-	}
-	public void setLogin(String login) {
-		this.login = login;
-	}
-	public String getSenha() {
-		return senha;
-	}
-	public void setSenha(String senha) {
-		this.senha = senha;
-	}
 
-	@Override
-	public String toString() {
-		return "Pessoa [login=" + login + ", senha=" + senha + "]";
-	}
+	//Talvez seja melhor na controle
 	
+	public void editarDados(String nome, String nascimento) {
+		this.setNome(nome);
+		this.setNascimento(nascimento);		
+		
+		
+	}
 }
