@@ -13,12 +13,11 @@ import javax.swing.JTextField;
 import controller.*;
 
 /**
- * Página de cadastro dos dados relativos à um sintoma mental 
+ * Página de cadastro dos dados relativos à um sintoma mental, incluindo listar e excluir o sintoma
  * 
  * @author Mylena e Sabrina.
  * @since 2022
  * @version 1.0 
- 
  */
 
 public class DetalheMental implements ActionListener {

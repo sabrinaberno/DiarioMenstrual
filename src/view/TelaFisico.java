@@ -36,14 +36,14 @@ public class TelaFisico implements ActionListener, ListSelectionListener {
 
 			titulo.setFont(new Font("Arial", Font.BOLD, 20));
 			titulo.setBounds(50, 0, 500, 50);
-			listaCadastrados.setBounds(50, 50, 290, 100);
+			listaCadastrados.setBounds(50, 50, 400, 200);
 			listaCadastrados.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
 			listaCadastrados.setVisibleRowCount(10);
 
-			cadastro.setBounds(70, 177, 100, 30);
+			cadastro.setBounds(70, 270, 150, 40);
 			cadastro.setBackground(Color.pink);
 			cadastro.setForeground(Color.black);
-			refresh.setBounds(200, 177, 100, 30);
+			refresh.setBounds(270, 270, 150, 40);
 			refresh.setBackground(new Color (255, 246, 249));
 			refresh.setForeground(Color.black);
 
@@ -54,7 +54,7 @@ public class TelaFisico implements ActionListener, ListSelectionListener {
 			janela.add(cadastro);
 			janela.add(refresh);
 
-			janela.setSize(400, 250);
+			janela.setSize(500, 450);
 			janela.setVisible(true);
 
 			cadastro.addActionListener(this);

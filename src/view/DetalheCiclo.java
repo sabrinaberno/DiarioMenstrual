@@ -13,12 +13,11 @@ import javax.swing.JTextField;
 import controller.*;
 
 /**
- * Página de cadastro dos dados relativos ao ciclo atual
+ * Página de cadastro dos dados relativos ao ciclo atual, incluindo listar e excluir o ciclo
  * 
  * @author Mylena e Sabrina.
  * @since 2022
  * @version 1.0 
- 
  */
 
 

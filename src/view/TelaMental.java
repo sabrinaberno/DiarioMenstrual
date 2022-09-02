@@ -35,14 +35,14 @@ public class TelaMental implements ActionListener, ListSelectionListener {
 
 			titulo.setFont(new Font("Arial", Font.BOLD, 20));
 			titulo.setBounds(50, 0, 500, 50);
-			listaMentaisCadastrados.setBounds(50, 50, 290, 100);
+			listaMentaisCadastrados.setBounds(50, 50, 400, 200);
 			listaMentaisCadastrados.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
 			listaMentaisCadastrados.setVisibleRowCount(10);
 
-			cadastroMental.setBounds(70, 177, 100, 30);
+			cadastroMental.setBounds(70, 270, 150, 40);
 			cadastroMental.setBackground(Color.pink);
 			cadastroMental.setForeground(Color.black);
-			refreshMental.setBounds(200, 177, 100, 30);
+			refreshMental.setBounds(270, 270, 150, 40);
 			refreshMental.setBackground(new Color (255, 246, 249));
 			refreshMental.setForeground(Color.black);
 
@@ -53,7 +53,7 @@ public class TelaMental implements ActionListener, ListSelectionListener {
 			janela.add(cadastroMental);
 			janela.add(refreshMental);
 
-			janela.setSize(400, 250);
+			janela.setSize(500, 450);
 			janela.setVisible(true);
 
 			cadastroMental.addActionListener(this);

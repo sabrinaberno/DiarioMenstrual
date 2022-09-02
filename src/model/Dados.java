@@ -6,7 +6,7 @@ package model;
 * Classe que armazena as arrays das classes cadastradas.
 * @author Mylena e Sabrina.
 * @since 2022
-* @version 2.0
+* @version 1.0
 **/
 
 public class Dados {
@@ -19,7 +19,7 @@ public class Dados {
 	private SintomaMental[] mentais = new SintomaMental[50];
 	private int qtdMentais = 0;
 	
-	
+
 	
 	public void fillWithSomeData() {
 		

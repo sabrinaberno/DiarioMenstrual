@@ -19,13 +19,13 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 /**
- * Página de cadastro de Pessoa.
+ * Página de cadastro de Pessoa, a qual deve constar nome e data de nascimento.
  * 
  * @author Mylena e Sabrina.
  * @since 2022
  * @version 1.0 
- 
  */
+
 public class CadastrarPessoa extends JFrame implements ActionListener {	
 	
 		private static final long serialVersionUID = 1L;

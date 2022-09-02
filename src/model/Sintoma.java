@@ -4,7 +4,7 @@ package model;
 * Classe Sintoma simula o comportamento de um sintoma e é a classe pai.
 * @author Mylena e Sabrina.
 * @since 2022
-* @version 2.0
+* @version 1.0
 **/
 
 public abstract class Sintoma {
@@ -12,6 +12,14 @@ public abstract class Sintoma {
 	protected int intensidade;
 	protected int numSintomas = 0;
 	
+	/**
+	 * Atributos de um sintoma
+	 * 
+	 * @param numSintomas     contagem do número de sintomas cadastrados
+	 * @param nomeMental      nome do tipo de sintoma
+	 * @param intensidade     intensidade que foi sentido o sintoma
+	 * @param cadastro        data em que foi cadastrado osintoma
+	 */	
 	
 	public Sintoma() {
 		super();

@@ -11,7 +11,13 @@ public class Pessoa {
 	public String nome;
 	public String nascimento;
 	
-
+	/**
+	 * Gera uma pessoa
+	 * 
+	 * @param nome		      nome do usuário do aplicativo
+	 * @param nascimento      data de nascimento do usuário	 
+	 */	
+	
 	
 	public Pessoa(String n, String nc) {
 		nome=n;
