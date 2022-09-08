@@ -1,133 +1,116 @@
 package model;
 
+<<<<<<< HEAD
 	/**
-	 * Classe Ciclo simula o comportamento do ciclo menstrual e nela está agregado SintomaMental
+=======
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
+/**
+>>>>>>> update_Mylena
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
+ * Classe Ciclo simula o comportamento do ciclo menstrual e nela está agregado SintomaMental
 	 *e SintomaFisico, já com Pessoa é uma associação simples.
 	 * @author Mylena e Sabrina.
 	 * @since 2022
+<<<<<<< HEAD
 	 * @version 1.0
+=======
+	 * @version 2.0
+>>>>>>> update_Mylena
 	 **/
 
 
 public class Ciclo {
 	
-	private Pessoa pessoa;
-	private String dataInicioMenstruacao;
-	private String dataFinalMenstruacao;
+	private final ArrayList<SintomaMental> mentais;
+	private final ArrayList<SintomaFisico> fisicos;
+	private Date dataInicioMenstruacao;
+	private Date dataFinalMenstruacao;
 	private int duracaoCiclo;
-	private SintomaMental sintomaMental;
-	private SintomaFisico sintomaFisico;
 	private String numero;
 	
-	// instanciar pessoa
 	
 	
-	public Ciclo(Pessoa p, String i, String f, int d, SintomaMental m, SintomaFisico s) {
-		dataInicioMenstruacao = i;
-		dataFinalMenstruacao = f;
-		duracaoCiclo = d; 
-		sintomaMental = m;
-		sintomaFisico = s;
-	}
-
-	public Ciclo(String string, String string2, int parseInt, String string3, int parseInt2) {
-		// TODO Auto-generated constructor stub
-	}
+	
+	public Ciclo(Date i, Date f, int d, String n) {
+		this.dataInicioMenstruacao = i;
+		this.dataFinalMenstruacao = f;
+		this.duracaoCiclo = d; 
+		this.numero=n;
+		this.fisicos=new ArrayList<>();
+		this.mentais = new ArrayList<>();
+		
+		}
 
 	
-
-	public void cadastrar() {
-		int qtd;
-		String numero = "Ciclo ";
-		Ciclo c = this;
-		SintomaFisico f = this.getSintomaFisico();
-		qtd = f.getNumSintomas();
-		f.setNumSintomas(qtd+1);
-		SintomaMental m = this.getSintomaMental();
-		qtd = m.getNumSintomas();
-		m.setNumSintomas(qtd+1);
-		c.setPessoa(pessoa);
-		c.setDataFinalMenstruacao(dataFinalMenstruacao);
-		c.setDataInicioMenstruacao(dataInicioMenstruacao);
-		c.setDuracaoCiclo(qtd);
-		c.setNumero(numero);
-	}
-
-
-	public final String getNumero() {
-		return numero;
-	}
-
-
-
-	public final void setNumero(String numero) {
-		this.numero = numero;
-	}
-
-
-
-	public Pessoa getPessoa() {
-		return pessoa;
-	}
-
-
-	public void setPessoa(Pessoa pessoa) {
-		this.pessoa = pessoa;
-	}
-
-
-	public  String getDataInicioMenstruacao() {
+	
+	public Date getDataInicioMenstruacao() {
 		return dataInicioMenstruacao;
 	}
 
 
-	public void setDataInicioMenstruacao(String dataInicioMenstruacao) {
+
+	public void setDataInicioMenstruacao(Date dataInicioMenstruacao) {
 		this.dataInicioMenstruacao = dataInicioMenstruacao;
 	}
 
 
-	public  String getDataFinalMenstruacao() {
+
+	public Date getDataFinalMenstruacao() {
 		return dataFinalMenstruacao;
 	}
 
 
-	public void setDataFinalMenstruacao(String dataFinalMenstruacao) {
+
+	public void setDataFinalMenstruacao(Date dataFinalMenstruacao) {
 		this.dataFinalMenstruacao = dataFinalMenstruacao;
 	}
+
+
 
 	public int getDuracaoCiclo() {
 		return duracaoCiclo;
 	}
 
 
-	public  void setDuracaoCiclo(int duracaoCiclo) {
+
+	public void setDuracaoCiclo(int duracaoCiclo) {
 		this.duracaoCiclo = duracaoCiclo;
 	}
 
 
-	public  SintomaMental getSintomaMental() {
-		return sintomaMental;
+
+	public String getNumero() {
+		return numero;
 	}
 
 
-	public void setSintomaMental(SintomaMental sintomaMental) {
-		this.sintomaMental = sintomaMental;
+
+	public void setNumero(String numero) {
+		this.numero = numero;
+	}
+	
+	public List<SintomaMental> getMentais() {
+		return mentais;
 	}
 
-
-	public SintomaFisico getSintomaFisico() {
-		return sintomaFisico;
+	public List<SintomaFisico> getFisico() {
+		return fisicos;
 	}
-
-	public void setSintomaFisico(SintomaFisico sintomaFisico) {
-		this.sintomaFisico = sintomaFisico;
-	}
-
+	
 
 
 	
+
+
 	public String toString() {
-		return "Ciclo" +numero+ "d@ " + pessoa.getNome() + "teve início em: " + dataInicioMenstruacao+ ", com duração de " + duracaoCiclo+
+		return "Ciclo" +numero+  "teve início em: " + dataInicioMenstruacao+ ", com duração de " + duracaoCiclo+
 				". Assim " + dataFinalMenstruacao+ "foi o último dia.";
 	}
 

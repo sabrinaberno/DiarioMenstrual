@@ -1,16 +1,11 @@
 package model;
 
-/**
-* Classe Sintoma simula o comportamento de um sintoma e é a classe pai.
-* @author Mylena e Sabrina.
-* @since 2022
-* @version 1.0
-**/
+import java.util.Date;
 
 public abstract class Sintoma {
-	protected String cadastro;
-	protected int intensidade;
-	protected int numSintomas = 0;
+	protected Date cadastro;
+	protected String nome;
+
 	
 	/**
 	 * Atributos de um sintoma
@@ -21,45 +16,43 @@ public abstract class Sintoma {
 	 * @param cadastro        data em que foi cadastrado osintoma
 	 */	
 	
+	
 	public Sintoma() {
 		super();
 	}
 	
 	
 
-	public  String getCadastro() {
+	public  Date getCadastro() {
 		return cadastro;
 	}
 
 
 
-	public void setCadastro(String cadastro) {
+	public void setCadastro(Date cadastro) {
 		this.cadastro = cadastro;
 	}
 
+	
+	
 
 
-	public int getIntensidade() {
-		return intensidade;
+	public String getNome() {
+		return nome;
 	}
 
 
 
-	public void setIntensidade(int intensidade) {
-		this.intensidade = intensidade;
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 
 
 
-	public int getNumSintomas() {
-		return numSintomas;
-	}
+
+	
 
 
-
-	public void setNumSintomas(int numSintomas) {
-		this.numSintomas = numSintomas;
-	}
 
 
 

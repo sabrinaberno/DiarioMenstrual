@@ -1,8 +1,9 @@
 package model;
 
+import java.util.Date;
+
 /**
 * Classe SintomaMental simula o comportamento de um sintoma mental e herda de Sintoma.
-
 * @author Mylena e Sabrina.
 * @since 2022
 * @version 1.0
@@ -12,7 +13,8 @@ package model;
 
 public class SintomaMental extends Sintoma {
 	
-	public String nomeMental;
+	public String descricao;
+	
 	
 	
 	/**
@@ -24,44 +26,42 @@ public class SintomaMental extends Sintoma {
 	 
 	 */	
 	
+	public SintomaMental(String n,String d, Date c) {
+		this.nome = n;
+		this.cadastro= c;		
+		this.descricao=d;
+		
 	
-	public SintomaMental(String n, int i, String d, int nu) {
-		this.nomeMental = n;
-		this.intensidade=i;
-		this.cadastro=d;
-		this.numSintomas= nu;
-			
+		
+				
 	}
 	
-
 	@Override
 		public String toString() {
-		return "Nome do sintoma mental: " + nomeMental ;
+		return "Nome do sintoma mental: " + nome + ", descrição:"+ descricao;
 	}
 
 
-	public String getNomeMental() {
-		return nomeMental;
-	}
-	public void setNomeMental(String nomeMental) {
-		this.nomeMental = nomeMental;
-	}
 	
-	@Override
-	public int getIntensidade() {
-		return intensidade;
+
+	public String getDescricao() {
+		return descricao;
 	}
 
-	public void setIntensidade(int intensidade) {
-		this.intensidade = intensidade;
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
 	}
 
-	public String getCadastro() {
+	public Date getCadastro() {
 		return cadastro;
 	}
-	public void setCadastro(String cadastro) {
+	public void setCadastro(Date cadastro) {
 		this.cadastro= cadastro;
 	}
 
+	
+
+
+	
 	}
 

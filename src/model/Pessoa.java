@@ -1,28 +1,21 @@
 package model;
 
+import java.util.ArrayList;
 /**
-* Classe Pessoa simula o comportamento de uma pessoa.
-* @author Mylena e Sabrina.
-* @since 2022
-* @version 1.0
-**/
-
+ * Recebe os dados gerais do usuário, além de editar esses dados.
+ * @author Maria Abritta e Thyago Moura 
+ * @version 1.0 (Abril 2022)
+ */
 public class Pessoa {
-	public String nome;
-	public String nascimento;
-	
-	/**
-	 * Gera uma pessoa
-	 * 
-	 * @param nome		      nome do usuário do aplicativo
-	 * @param nascimento      data de nascimento do usuário	 
-	 */	
-	
-	
-	public Pessoa(String n, String nc) {
-		nome=n;
-		nascimento=nc;
-		
+	private String nome;
+	private String senha;
+	private String email;
+	private static ArrayList<Ciclo> ciclos = new ArrayList<>();
+
+	public Pessoa(String n, String s, String e) {
+		nome = n;
+		senha = s;
+		email=e;
 		
 	}
 
@@ -30,27 +23,48 @@ public class Pessoa {
 		return nome;
 	}
 
-
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-
-
-	public String getNascimento() {
-		return nascimento;
-	}
-	public void setNascimento(String nascimento) {
-		this.nascimento = nascimento;
+	public String setNome(String nome) {
+		return this.nome = nome;
 	}
 
 	
 
-	//Talvez seja melhor na controle
-	
-	public void editarDados(String nome, String nascimento) {
-		this.setNome(nome);
-		this.setNascimento(nascimento);		
-		
-		
+	public String getSenha() {
+		return senha;
 	}
+
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
+
+	
+
+	
+
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public static ArrayList<Ciclo> getCiclos() {
+		return ciclos;
+	}
+
+
+
+	/**
+	 * Atualiza os dados existentes para os dados editados.
+	 * @param nome, email, rg, cpf, senha, telefone
+	 */
+	public void editarDados(String n,  String s, String e) {
+		this.setNome(n);	
+		this.setSenha(s);
+		this.setEmail(e);
+	
+	}
+
 }

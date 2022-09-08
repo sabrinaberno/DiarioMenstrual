@@ -1,5 +1,7 @@
 package model;
 
+import java.util.Date;
+
 /**
 * Classe SintomaFisico simula o comportamento de um sintoma físico e herda de Sintoma.
 * @author Mylena e Sabrina.
@@ -9,7 +11,7 @@ package model;
 
 public class SintomaFisico extends Sintoma {
 	
-	public String nomeFisico;
+	public int intensidade;
 	public String local;
 	
 	/**
@@ -22,48 +24,36 @@ public class SintomaFisico extends Sintoma {
 	 
 	 */	
 	
-	public SintomaFisico(String n, String l, int i, String cadastro,int nu) {
-		this.nomeFisico = n;
+	public SintomaFisico(String n, String l,int i, Date c) {
+		this.nome = n;
 		this.local= l;
 		this.intensidade=i;
-		this.cadastro= cadastro;
-		this.numSintomas=nu;
+		this.cadastro= c;
+		
+		
 		
 				
 	}
 	@Override
 		public String toString() {
-		return "Nome do sintoma físico: " + nomeFisico + ",local:" + local;
+		return "Nome do sintoma físico: " + nome + ",local:" + local;
 	}
 
 
-	public  String getNomeFisico() {
-		return nomeFisico;
-	}
-	public  void setNomeFisico(String nomeFisico) {
-		this.nomeFisico = nomeFisico;
-	}
+	
 	public  String getLocal() {
 		return local;
 	}
 	public  void setLocal(String local) {
 		this.local = local;
 	}
-@Override
 	public int getIntensidade() {
 		return intensidade;
 	}
-
 	public void setIntensidade(int intensidade) {
 		this.intensidade = intensidade;
 	}
 
-	public String getCadastro() {
-		return cadastro;
-	}
-	public void setCadastro(String cadastro) {
-		this.cadastro= cadastro;
-	}
 	
 }
 
