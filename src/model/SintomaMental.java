@@ -1,40 +1,68 @@
 package model;
 
+import java.util.Date;
 
-public class SintomaMental extends Sintoma {	
+/**
+* Classe SintomaMental simula o comportamento de um sintoma mental e herda de Sintoma.
+* @author Mylena e Sabrina.
+* @since 2022
+* @version 2.0
+**/
 
+
+
+public class SintomaMental extends Sintoma {
 	
-	public enum NomeSintomaMental {
-		DESEQUILIBRADA(1), ESTRESSADA(2), MAL_HUMORADA(3), CALMA(4), ANSIOSA(5), ALEGRE(6), APATICA(7), SONOLENTA(8), 
-		DESEJO_SALGADO(9), DESEJO_DOCE(10), AMOROSA(11),SENSIVEL(12), INSEGURA(13), INSONIA(14), VERTIGEM(15);
-		
-		private final int valor;
-		
-		NomeSintomaMental(int valor){
-			this.valor = valor;
-		}
-
-		int getValor() {
-			return valor;
-		}
-		
-		
-		public static void display (int valor) {
-			
-		}
+	public String descricao;
 	
-	}
-	private NomeSintomaMental NomeSintomaMental;
-	public NomeSintomaMental getNomeSintomaMental() {
-		return NomeSintomaMental;
-	}
-	public void setNomeSintomaMental(NomeSintomaMental nomeSintomaMental) {
-		NomeSintomaMental = nomeSintomaMental;
+	
+	
+	/**
+	 * Gera um sintoma mental.
+	 * 
+	 * @param nomeMental      nome do tipo de sintoma
+	 * @param intensidade     intensidade que foi sentido o sintoma
+	 * @param cadastro        data em que foi cadastrado
+	 
+	 */	
+	
+	public SintomaMental(char tipo,String n,String d, Date c, Ciclo ci) {
+		this.nome = n;
+		this.cadastro= c;
+		this.tipo=tipo;
+		this.descricao=d;
+		this.ciclos=ci;
+	
+		
+				
 	}
 	
 	@Override
-	public String toString() {
-		return "Sintoma mental" + NomeSintomaMental;
+		public String toString() {
+		return "Nome do sintoma mental: " + nome + ", descrição:"+ descricao;
 	}
 
-}
+
+	
+
+	public String getDescricao() {
+		return descricao;
+	}
+
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
+
+	public Date getCadastro() {
+		return cadastro;
+	}
+	public void setCadastro(Date cadastro) {
+		this.cadastro= cadastro;
+	}
+
+	
+
+
+	
+	}
+

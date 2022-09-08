@@ -1,68 +1,62 @@
 package model;
 
+import java.util.Date;
 
+/**
+* Classe SintomaFisico simula o comportamento de um sintoma físico e herda de Sintoma.
+* @author Mylena e Sabrina.
+* @since 2022
+* @version 2.0
+**/
 
 public class SintomaFisico extends Sintoma {
-	public enum LocalCorpo {
-		COSTAS(1), CABECA(2), ARTICULACAO(3), SEIO(4), UTERO(5), BARRIGA(6), ESTOMAGO(7), ROSTO(8), CORPO_INTEIRO(9); 
-
-		private final int valor;
-		
-		LocalCorpo(int valor){
-			this.valor = valor;
-		}
-
-		int getValor() {
-			return valor;
-		}
-		
-		
-		public static void display (int valor) {
-			LocalCorpo constant[] = LocalCorpo.values();
-		}
-	}
 	
+	public int intensidade;
+	public String local;
 	
-	public enum NomeSintomaFisico {
-		DOR(1), SENSIBILIDADE(2), COLICA(3), SANGRAMENTO(4), PRISAO_VENTRE(5), DIARREIA(6), INDIGESTAO(7), ACNE(8), INCHACO(9);
+	/**
+	 * Gera um sintoma físico.
+	 * 
+	 * @param nomeFisico      nome do tipo de sintoma
+	 * @param local           local que sentiu o sintoma
+	 * @param intensidade     intensidade que foi sentido o sintoma
+	 * @param cadastro        data em que foi cadastrado
+	 
+	 */	
+	
+	public SintomaFisico(char tipo,String n, String l, int i, Date c, Ciclo ci) {
+		this.nome = n;
+		this.local= l;
+		this.intensidade=i;
+		this.cadastro= c;
+		this.tipo=tipo;
+		this.ciclos=ci;
 		
-		private final int valor;
 		
-		NomeSintomaFisico(int valor){
-			this.valor = valor;
-		}
-
-		int getValor() {
-			return valor;
-		}
-		
-
-		public static void display (int valor) {
-			NomeSintomaFisico constant[] = NomeSintomaFisico.values();
-		}
-	
+				
 	}
-	private LocalCorpo localCorpo; 
-	private static NomeSintomaFisico NomeSintomaFisico;
-	
-	public LocalCorpo getLocalCorpo() {
-		return localCorpo;
-	}
-	public void setLocalCorpo(LocalCorpo localCorpo) {
-		this.localCorpo = localCorpo;
-	}
-	public static NomeSintomaFisico getNomeSintomaFisico() {
-		return NomeSintomaFisico;
-	}
-	public static void setNomeSintomaFisico(NomeSintomaFisico nomeSintomaFisico) {
-		NomeSintomaFisico = nomeSintomaFisico;
-	}
-	
 	@Override
-	public String toString() {
-		return "Sintoma" + NomeSintomaFisico + "no" + localCorpo;
+		public String toString() {
+		return "Nome do sintoma físico: " + nome + ",local:" + local;
 	}
 
+
 	
+	public  String getLocal() {
+		return local;
+	}
+	public  void setLocal(String local) {
+		this.local = local;
+	}
+	public int getIntensidade() {
+		return intensidade;
+	}
+	public void setIntensidade(int intensidade) {
+		this.intensidade = intensidade;
+	}
+
 	
 }
+
+
+
