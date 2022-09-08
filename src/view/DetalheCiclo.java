@@ -206,7 +206,7 @@ public class DetalheCiclo implements ActionListener {
 		if(src == botaoExcluir) {
 			boolean res = false;
 
-			if (opcao == 2) {//exclui aluno
+			if (opcao == 2) {
 				res = dados.removerCiclo(posicao);
 				if (res) mensagemSucessoExclusao(); 
 				else mensagemErroExclusao(); 

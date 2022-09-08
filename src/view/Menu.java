@@ -9,7 +9,6 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
-import javax.swing.SwingConstants;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Font;
@@ -41,13 +40,12 @@ public class Menu implements ActionListener {
 		
 		janela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);		
 		janela.setBounds(100, 100, 600, 600);
-		titulo.setBounds(50, 0, 500, 50);	
+		titulo.setBounds(145, 0, 500, 50);	
 		painel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		painel.setLayout(new BorderLayout(0, 0));
 
 		
 		titulo.setFont(new Font("Arial", Font.BOLD, 22));
-		titulo.setHorizontalAlignment(SwingConstants.CENTER);
 		
 		
 		janela.setLayout(null);

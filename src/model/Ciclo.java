@@ -19,7 +19,7 @@ public class Ciclo {
 	private SintomaFisico sintomaFisico;
 	private String numero;
 	
-	
+	// instanciar pessoa
 	
 	
 	public Ciclo(Pessoa p, String i, String f, int d, SintomaMental m, SintomaFisico s) {

@@ -26,7 +26,7 @@ public class Dados {
 		for(int i = 0; i < 5; i++) {
 			pessoas[i] = new Pessoa("Nome"+i,"27/09/1999");
 			fisicos[i] = new SintomaFisico("Cólica","local",3+5,"25/09/2022",1);
-			mentais[i] = new SintomaMental("Sintoma"+i, i, "21/09/2011", i);
+			//mentais[i] = new SintomaMental("Sintoma"+i, i, "21/09/2011", i);
 			ciclos[i] = new Ciclo(pessoas[i],"31/10/2022","15/11/2022",i, mentais[i], fisicos[i]);
 						
 		}

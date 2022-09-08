@@ -13,12 +13,12 @@ public class ControleMentais{
 		
 	}
 	
+	
 	public String[] getNomeMental() {
 		String[] s = new String[qtdMentais];
 		for(int i = 0; i < qtdMentais; i++) {
-			s[i] = m[i].getNomeMental();
+			//s[i] = m[i].getNomeMental();
 		}
-		
 		return s;
 	}
 	

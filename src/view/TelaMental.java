@@ -26,6 +26,7 @@ public class TelaMental implements ActionListener, ListSelectionListener {
 	public void mostrarDados(ControleDados d, int op){
 		dados = d;
 
+
 		    listaNomes = new ControleMentais(dados).getNomeMental();
 			listaMentaisCadastrados = new JList<String>(listaNomes);
 			janela = new JFrame("Sintomas mentais.");
@@ -68,12 +69,12 @@ public class TelaMental implements ActionListener, ListSelectionListener {
 		Object src = e.getSource();
 		
 		//Cadastro de novo aluno
-		if(src == cadastroMental)	
-			
+		if(src == cadastroMental){
 			new DetalheMental().inserirEditar(1, dados, this, 0);
+		}
+			
 
 		
-		// Atualiza a lista de nomes de alunos mostrada no JList
 		if(src == refreshMental) {
 			listaMentaisCadastrados.setListData(new ControleMentais(dados).getNomeMental());			
 			listaMentaisCadastrados.updateUI();
@@ -81,7 +82,6 @@ public class TelaMental implements ActionListener, ListSelectionListener {
 
 			}
 
-	//Captura eventos relacionados ao JList
 	public void valueChanged(ListSelectionEvent e) {
 		Object src = e.getSource();
 

@@ -181,7 +181,7 @@ public class DetalheFisico implements ActionListener {
 			if (opcao == 2) {//exclui aluno
 				res = dados.removerFisico(posicao);
 				if (res) mensagemSucessoExclusao(); 
-				else mensagemErroExclusaoMental(); 
+				else mensagemErroExclusaoFisico(); 
 			}
 				
 			
@@ -198,32 +198,19 @@ public class DetalheFisico implements ActionListener {
 
 	public void mensagemSucessoCadastro() {
 		JOptionPane.showMessageDialog(null, "Os dados foram salvos com sucesso!", null, 
-				JOptionPane.INFORMATION_MESSAGE);
+			JOptionPane.INFORMATION_MESSAGE);
 		janela.dispose();
 	}
 
 	public void mensagemErroCadastro() {
-		JOptionPane.showMessageDialog(null,"ERRO AO SALVAR OS DADOS!\n "
-				+ "Pode ter ocorrido um dos dois erros a seguir:  \n"
-				+ "1. Nem todos os campos foram preenchidos \n"
-				+ "2. CPF, identidade, DDD e telefone n�o cont�m apenas n�meros", null, 
-				JOptionPane.ERROR_MESSAGE);
+		JOptionPane.showMessageDialog(null, "ERRO AO SALVAR OS DADOS!");
+		janela.dispose();
 	}
 
-	public void mensagemErroExclusaoMental() {
-		JOptionPane.showMessageDialog(null,"Ocorreu um erro ao excluir o dado.\n "
-				+ "Verifique se o aluno est� matriculado\n"
-				+ "em alguma disciplina. Se sim, cancele\n "
-				+ "a matricula e tente novamente.", null, 
-				JOptionPane.ERROR_MESSAGE);
+	public void mensagemErroExclusaoFisico() {
+		JOptionPane.showMessageDialog(null, "ERRO AO EXCLUIR OS DADOS!");
+				janela.dispose();
 	}
 	
-	public void mensagemErroExclusaoFisico() {
-		JOptionPane.showMessageDialog(null,"Ocorreu um erro ao excluir o dado.\n "
-				+ "Verifique se o professor est� respons�vel\n"
-				+ "por alguma disciplina. Se sim, substitua\n "
-				+ "o professor e tente novamente.", null, 
-				JOptionPane.ERROR_MESSAGE);
-	}
-
+	
 }

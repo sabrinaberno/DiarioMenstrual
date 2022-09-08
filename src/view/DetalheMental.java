@@ -31,7 +31,7 @@ public class DetalheMental implements ActionListener {
 	private JTextField valorCadastro;		
 	private JButton botaoExcluir = new JButton("Excluir");
 	private JButton botaoSalvar = new JButton("Salvar");
-	private String[] novoDado = new String[9];
+	private String[] novoDado = new String[50];
 	private static ControleDados dados;
 	private int posicao;
 	private int opcao;
@@ -73,14 +73,14 @@ public class DetalheMental implements ActionListener {
 			
 							
 		
-		} else { //N�o preenche com dados
+		}else { //Nao preenche com dados
 
 			valorMental = new JTextField(200);
 			valorIntensidade = new JTextField(200);
 			valorCadastro = new JTextField(200);			
 
 			botaoSalvar.setBounds(245, 175, 115, 30);
-		}
+		} 
 	
 		
 		labelIntensidade.setBounds(30, 20, 150, 25);
@@ -137,9 +137,9 @@ public class DetalheMental implements ActionListener {
 		if(src == botaoSalvar) {
 			try {
 				boolean res = true;
-				if(opcao == 1) //cadastro de novo aluno
+				if(opcao == 1)
 					novoDado[0] = Integer.toString(dados.getQtdMentais());
-				else // edicao de dado existente
+				else 
 					novoDado[0] = Integer.toString(posicao);						
 				
 				
@@ -161,6 +161,8 @@ public class DetalheMental implements ActionListener {
 			} catch (NumberFormatException exc2) {
 				mensagemErroCadastro();
 			}
+
+
 		}
 
 		if(src == botaoExcluir) {
@@ -191,27 +193,14 @@ public class DetalheMental implements ActionListener {
 	}
 
 	public void mensagemErroCadastro() {
-		JOptionPane.showMessageDialog(null,"ERRO AO SALVAR OS DADOS!\n "
-				+ "Pode ter ocorrido um dos dois erros a seguir:  \n"
-				+ "1. Nem todos os campos foram preenchidos \n"
-				+ "2. CPF, identidade, DDD e telefone n�o cont�m apenas n�meros", null, 
-				JOptionPane.ERROR_MESSAGE);
+		JOptionPane.showMessageDialog(null, "ERRO AO SALVAR OS DADOS!");
+				janela.dispose();
 	}
 
 	public void mensagemErroExclusaoMental() {
-		JOptionPane.showMessageDialog(null,"Ocorreu um erro ao excluir o dado.\n "
-				+ "Verifique se o aluno est� matriculado\n"
-				+ "em alguma disciplina. Se sim, cancele\n "
-				+ "a matricula e tente novamente.", null, 
-				JOptionPane.ERROR_MESSAGE);
+		JOptionPane.showMessageDialog(null, "ERRO AO EXCLUIR OS DADOS!");
+				janela.dispose();
 	}
 	
-	public void mensagemErroExclusaoFisico() {
-		JOptionPane.showMessageDialog(null,"Ocorreu um erro ao excluir o dado.\n "
-				+ "Verifique se o professor est� respons�vel\n"
-				+ "por alguma disciplina. Se sim, substitua\n "
-				+ "o professor e tente novamente.", null, 
-				JOptionPane.ERROR_MESSAGE);
-	}
-
+	
 }

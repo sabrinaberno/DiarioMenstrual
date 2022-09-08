@@ -13,7 +13,8 @@ package model;
 public class SintomaMental extends Sintoma {
 	
 	public String nomeMental;
-			
+	
+	
 	/**
 	 * Gera um sintoma mental.
 	 * 
@@ -23,16 +24,16 @@ public class SintomaMental extends Sintoma {
 	 
 	 */	
 	
-
+	
 	public SintomaMental(String n, int i, String d, int nu) {
 		this.nomeMental = n;
 		this.intensidade=i;
 		this.cadastro=d;
 		this.numSintomas= nu;
-		
-				
+			
 	}
 	
+
 	@Override
 		public String toString() {
 		return "Nome do sintoma mental: " + nomeMental ;
@@ -62,9 +63,5 @@ public class SintomaMental extends Sintoma {
 		this.cadastro= cadastro;
 	}
 
-	
-
-
-	
 	}
 
