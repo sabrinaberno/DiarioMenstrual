@@ -19,31 +19,14 @@ import java.awt.event.ActionEvent;
  * @author Mylena e Sabrina
  * @version 2.0 
  */
-public class TelaInicial {
+public class TelaInicial implements ActionListener {
 
 	private JFrame frame;
 	private JLabel titulo = new JLabel("Diário Menstrual");
 	private JButton cadastro = new JButton("Cadastrar-se");
 	private JButton login = new JButton("Fazer Login");
 
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					TelaInicial window = new TelaInicial();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
 	public TelaInicial() {
-		initialize();
-	}
-
-	public void initialize() {
 		frame = new JFrame();
 		frame.getContentPane().setBackground(Color.white);
 		frame.getContentPane().setLayout(null);
@@ -94,4 +77,18 @@ public class TelaInicial {
 		frame.getContentPane().add(cadastro);
 	}
 
+	public static void main (String[] args) {
+		
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					TelaInicial window = new TelaInicial();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	
+	}
 }

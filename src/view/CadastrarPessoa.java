@@ -5,14 +5,18 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+
 import java.awt.Color;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
+import javax.swing.border.EmptyBorder;
 
 import controller.ControllerUsuarias;
 import model.Dados;
 import model.Pessoa;
 
+import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -30,12 +34,22 @@ import java.awt.SystemColor;
  * @since 2022 
  * @version 1.0 
  */
-public class CadastrarPessoa {
 
-	private JFrame frame;
+
+public class CadastrarPessoa extends JFrame implements ActionListener {
+
+	public JLabel titulo = new JLabel("Cadastro");
+	private JPanel painel = new JPanel();
+	private JFrame janela = new JFrame("Tela de Cadastro");
+	public JLabel descricao = new JLabel("Insira os dados necesarios ");
+	public JLabel nome = new JLabel("Nome em Letras maiusculas:");
 	public static JTextField txtNome;
-	public static JTextField txtEmail;
-	public static JPasswordField senha;
+	public JLabel email = new JLabel("E-mail:");
+	public static JTextField txtEmail = new JTextField();;
+	public static JPasswordField txtsenha = new JPasswordField();
+	public JLabel senha1 = new JLabel("Senha comecando com 3 letras maiusculas e ");
+	public JLabel senha2 = new JLabel("terminar com 4 numeros):");
+	public JButton check = new JButton("Cadastrar");
 
 	/**
 	 * Launch the application.
@@ -45,7 +59,7 @@ public class CadastrarPessoa {
 			public void run() {
 				try {
 					CadastrarPessoa window = new CadastrarPessoa();
-					window.frame.setVisible(true);
+					window.janela.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -57,80 +71,81 @@ public class CadastrarPessoa {
 	 * Create the application.
 	 */
 	public CadastrarPessoa() {
-		initialize();
-	}
-
-	/**
-	 * Initialize the contents of the frame.
-	 */
-	public void initialize() {
+		
 		ControllerUsuarias control = new ControllerUsuarias();
-		frame = new JFrame();
-		frame.setBounds(100, 100, 450, 706);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.getContentPane().setLayout(null);
+		janela.setBounds(100, 100, 600, 600);
+		janela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		janela.getContentPane().setLayout(null);
+		painel.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(painel);
+		painel.setBorder(new EmptyBorder(5, 5, 5, 5));
 
-		JLabel tituloUm = new JLabel("Insira os dados necesarios ");
-		tituloUm.setFont(new Font("Elephant", Font.PLAIN, 17));
-		tituloUm.setForeground(Color.BLACK);
-		tituloUm.setBackground(Color.CYAN);
-		tituloUm.setBounds(111, 99, 239, 31);
-		frame.getContentPane().add(tituloUm);
 
-		JLabel tituloDois = new JLabel("para efetuar seu cadastro: ");
-		tituloDois.setFont(new Font("Elephant", Font.PLAIN, 17));
-		tituloDois.setBounds(121, 125, 239, 13);
-		frame.getContentPane().add(tituloDois);
+		titulo.setForeground(new Color(240,92,138));
+		titulo.setFont(new Font("Elephant", Font.PLAIN, 37));
+		titulo.setBounds(210, 30, 200, 75);
+		janela.getContentPane().add(titulo);
+		
+		descricao.setFont(new Font("Elephant", Font.PLAIN, 20));
+		descricao.setForeground(Color.BLACK);
+		descricao.setBackground(Color.CYAN);
+		descricao.setBounds(170, 100, 500, 50);
+		janela.getContentPane().add(descricao);
 
-		JLabel tituloNome = new JLabel("Nome (Letras maiusculas):");
-		tituloNome.setFont(new Font("Cambria", Font.PLAIN, 15));
-		tituloNome.setBounds(46, 165, 176, 14);
-		frame.getContentPane().add(tituloNome);
+		
+		nome.setFont(new Font("Cambria", Font.PLAIN, 18));
+		nome.setBounds(50, 170, 500, 20);
+		janela.getContentPane().add(nome);
 
 		txtNome = new JTextField();
-		txtNome.setBounds(46, 186, 335, 20);
-		frame.getContentPane().add(txtNome);
+		txtNome.setBounds(50, 195, 500, 30);
+		janela.getContentPane().add(txtNome);
 		txtNome.setColumns(10);
 
-		JLabel lblNewLabel_2_1 = new JLabel("E-mail:");
-		lblNewLabel_2_1.setFont(new Font("Cambria", Font.PLAIN, 15));
-		lblNewLabel_2_1.setBounds(46, 246, 46, 14);
-		frame.getContentPane().add(lblNewLabel_2_1);
-
-		txtEmail = new JTextField();
-		txtEmail.setColumns(10);
-		txtEmail.setBounds(46, 267, 335, 20);
-		frame.getContentPane().add(txtEmail);
+		
+		email.setFont(new Font("Cambria", Font.PLAIN, 18));
+		email.setBounds(50, 260, 500, 20);
+		janela.getContentPane().add(email);
 
 		
+		txtEmail.setBounds(50, 290, 500, 30);
+		janela.getContentPane().add(txtEmail);
 
-		
+			
 
-		JLabel tituloSenha = new JLabel("Senha (Deve comecar com 3 letras maiusculas e ");
-		tituloSenha.setVerticalAlignment(SwingConstants.BOTTOM);
-		tituloSenha.setHorizontalAlignment(SwingConstants.LEFT);
-		tituloSenha.setFont(new Font("Cambria", Font.PLAIN, 15));
-		tituloSenha.setBounds(46, 570, 335, 14);
-		frame.getContentPane().add(tituloSenha);
+		senha1.setFont(new Font("Cambria", Font.PLAIN, 18));
+		senha1.setBounds(50, 350, 500, 20);
+		janela.getContentPane().add(senha1);
 
-		senha = new JPasswordField();
-		senha.setBounds(46, 607, 335, 20);
-		frame.getContentPane().add(senha);
+
+		senha2.setFont(new Font("Cambria", Font.PLAIN, 18));
+		senha2.setBounds(50, 375, 500, 20);
+		janela.getContentPane().add(senha2);
+
+		txtsenha.setBounds(50, 410, 500, 30);
+		janela.getContentPane().add(txtsenha);
+
 
 		/**
 		 * Faz a verificação das verificações necessárias de cada informação.
 		 */
-		JButton check = new JButton("OK");
-		check.setFont(new Font("Cambria", Font.PLAIN, 11));
-		check.setBackground(SystemColor.desktop);
-		check.setBounds(181, 633, 89, 23);
-		check.addActionListener(new ActionListener() {
+		check.setFont(new Font("Cambria", Font.PLAIN, 22));
+		check.setForeground(Color.BLACK);
+		check.setBorder(BorderFactory.createLineBorder(new Color(179,136,235), 2));
+		check.setBounds(180, 470, 200, 40);
+		janela.getContentPane().add(check);
+		check.addActionListener(this);
 
-			@SuppressWarnings("deprecation")
-			public void actionPerformed(ActionEvent e) {
-				String msgErro = control.verificaCadastro(txtNome.getText(), txtEmail.getText(),
+				
+	}
+
+
+	public void actionPerformed(ActionEvent e) {
+		
+		@SuppressWarnings("deprecation")
+		String msgErro = control.verificaCadastro(txtNome.getText(), txtEmail.getText(),
 						
-						senha.getText());
+				txtsenha.getText());
 
 				if (msgErro == null) {
 					JOptionPane.showMessageDialog(null, "Preencha todos os campos!",
@@ -145,55 +160,15 @@ public class CadastrarPessoa {
 					JOptionPane.showMessageDialog(null, "Confirmar Cadastro", "Deseja Confirmar o Cadastro ?",
 							JOptionPane.DEFAULT_OPTION);
 
+
 					Dados.getPessoas().add(new Pessoa(txtNome.getText(), txtEmail.getText(), 
-							 senha.getText()));
+					txtsenha.getText()));
 
-					// outros
-					frame.dispose();
-					TelaLoging.main(null);
+					
+					janela.setVisible(false);
+					new TelaLoging();
+					
 				}
-			}
-		});
-
-		frame.getContentPane().add(check);
-
-		JLabel lblTerminarCom = new JLabel("terminar com 4 numeros):");
-		lblTerminarCom.setVerticalAlignment(SwingConstants.BOTTOM);
-		lblTerminarCom.setHorizontalAlignment(SwingConstants.LEFT);
-		lblTerminarCom.setFont(new Font("Cambria", Font.PLAIN, 15));
-		lblTerminarCom.setBounds(46, 584, 335, 14);
-		frame.getContentPane().add(lblTerminarCom);
-
-		JLabel lblCadastro = new JLabel("Cadastro");
-		lblCadastro.setForeground(SystemColor.desktop);
-		lblCadastro.setFont(new Font("Elephant", Font.PLAIN, 37));
-		lblCadastro.setBounds(146, 25, 204, 75);
-		frame.getContentPane().add(lblCadastro);
-
-		JLabel tiruloUm_1 = new JLabel("Cadastro");
-		tiruloUm_1.setForeground(new Color(51, 204, 204));
-		tiruloUm_1.setFont(new Font("Elephant", Font.PLAIN, 37));
-		tiruloUm_1.setBounds(136, 11, 194, 75);
-		frame.getContentPane().add(tiruloUm_1);
-	}
-
-	@SuppressWarnings("unused")
-	private static void addPopup(Component component, final JPopupMenu popup) {
-		component.addMouseListener(new MouseAdapter() {
-			public void mousePressed(MouseEvent e) {
-				if (e.isPopupTrigger()) {
-					showMenu(e);
-				}
-			}
-
-			public void mouseReleased(MouseEvent e) {
-				if (e.isPopupTrigger()) {
-					showMenu(e);
-				}
-			}
-
-			private void showMenu(MouseEvent e) {
-				popup.show(e.getComponent(), e.getX(), e.getY());
 			}
 		});
 	}
