@@ -7,7 +7,6 @@ import javax.swing.JLabel;
 
 import model.Dados;
 
-import java.awt.SystemColor;
 import java.awt.Font;
 
 import javax.swing.BorderFactory;
@@ -19,17 +18,33 @@ import java.awt.event.ActionEvent;
  * @author Mylena e Sabrina
  * @version 2.0 
  */
-public class TelaInicial implements ActionListener {
+public class TelaInicial {
 
 	private JFrame frame;
 	private JLabel titulo = new JLabel("Diário Menstrual");
-	private JButton cadastro = new JButton("Cadastrar-se");
+	private static JButton cadastro = new JButton("Cadastrar-se");
 	private JButton login = new JButton("Fazer Login");
 
+	public static void main (String[] args) {
+
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					TelaInicial window = new TelaInicial();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		}); }
+		
+
 	public TelaInicial() {
+
 		frame = new JFrame();
 		frame.getContentPane().setBackground(Color.white);
 		frame.getContentPane().setLayout(null);
+		//frame.getContentPane().setVisible(true);
 		frame.setBounds(100, 100, 450, 224);
 
 		titulo.setForeground(new Color(255,92,138));
@@ -46,15 +61,15 @@ public class TelaInicial implements ActionListener {
 					Object src = e.getSource();
 					if (src == login) {
 						frame.dispose();
-						TelaLoging.main(null);
+						new TelaInicial();
 					}
 				}
 			});
 
 			login.setFont(new Font("Cambria", Font.PLAIN, 15));
 			login.setBackground(new Color(204, 153, 255));
-			login.setBounds(163, 100, 119, 38);
-			cadastro.setBounds(163, 150, 119, 38);
+			login.setBounds(50, 100, 119, 38);
+			cadastro.setBounds(160, 150, 119, 38);
 			frame.setBounds(100, 100, 450, 250);
 			frame.getContentPane().add(login);
 		}
@@ -64,7 +79,7 @@ public class TelaInicial implements ActionListener {
 				Object src = e.getSource();
 				if (src == cadastro) {
 					frame.dispose();
-					CadastrarPessoa.main(null);
+					new CadastrarPessoa();
 				}
 			}
 		});
@@ -73,22 +88,16 @@ public class TelaInicial implements ActionListener {
 		cadastro.setForeground(Color.BLACK);
 		cadastro.setBorder(BorderFactory.createLineBorder(new Color(179,136,235), 2));
 
-
 		frame.getContentPane().add(cadastro);
-	}
 
-	public static void main (String[] args) {
 		
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					TelaInicial window = new TelaInicial();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	
-	}
+		
+
 }
+
+
+}
+
+
+
+

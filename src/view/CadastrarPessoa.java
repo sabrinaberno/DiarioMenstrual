@@ -1,6 +1,5 @@
 package view;
 
-import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -9,7 +8,6 @@ import javax.swing.JPanel;
 
 import java.awt.Color;
 import javax.swing.JTextField;
-import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
 import controller.ControllerUsuarias;
@@ -22,11 +20,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Font;
 import javax.swing.JPasswordField;
-import javax.swing.JPopupMenu;
-import java.awt.Component;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.awt.SystemColor;
+
 
 /**
  * Tela de cadastro de usuário.
@@ -36,7 +30,7 @@ import java.awt.SystemColor;
  */
 
 
-public class CadastrarPessoa extends JFrame implements ActionListener {
+public class CadastrarPessoa extends JFrame {
 
 	public JLabel titulo = new JLabel("Cadastro");
 	private JPanel painel = new JPanel();
@@ -50,29 +44,15 @@ public class CadastrarPessoa extends JFrame implements ActionListener {
 	public JLabel senha1 = new JLabel("Senha comecando com 3 letras maiusculas e ");
 	public JLabel senha2 = new JLabel("terminar com 4 numeros):");
 	public JButton check = new JButton("Cadastrar");
+	public ControllerUsuarias control = new ControllerUsuarias();
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					CadastrarPessoa window = new CadastrarPessoa();
-					window.janela.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
+	
 	/**
 	 * Create the application.
 	 */
+
 	public CadastrarPessoa() {
 		
-		ControllerUsuarias control = new ControllerUsuarias();
 		janela.setBounds(100, 100, 600, 600);
 		janela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		janela.getContentPane().setLayout(null);
@@ -80,6 +60,8 @@ public class CadastrarPessoa extends JFrame implements ActionListener {
 		setContentPane(painel);
 		painel.setBorder(new EmptyBorder(5, 5, 5, 5));
 
+		janela.setLayout(null);
+		janela.setVisible(true);
 
 		titulo.setForeground(new Color(240,92,138));
 		titulo.setFont(new Font("Elephant", Font.PLAIN, 37));
@@ -100,7 +82,6 @@ public class CadastrarPessoa extends JFrame implements ActionListener {
 		txtNome = new JTextField();
 		txtNome.setBounds(50, 195, 500, 30);
 		janela.getContentPane().add(txtNome);
-		txtNome.setColumns(10);
 
 		
 		email.setFont(new Font("Cambria", Font.PLAIN, 18));
@@ -111,7 +92,6 @@ public class CadastrarPessoa extends JFrame implements ActionListener {
 		txtEmail.setBounds(50, 290, 500, 30);
 		janela.getContentPane().add(txtEmail);
 
-			
 
 		senha1.setFont(new Font("Cambria", Font.PLAIN, 18));
 		senha1.setBounds(50, 350, 500, 20);
@@ -125,25 +105,17 @@ public class CadastrarPessoa extends JFrame implements ActionListener {
 		txtsenha.setBounds(50, 410, 500, 30);
 		janela.getContentPane().add(txtsenha);
 
-
-		/**
-		 * Faz a verificação das verificações necessárias de cada informação.
-		 */
+		
 		check.setFont(new Font("Cambria", Font.PLAIN, 22));
 		check.setForeground(Color.BLACK);
 		check.setBorder(BorderFactory.createLineBorder(new Color(179,136,235), 2));
 		check.setBounds(180, 470, 200, 40);
 		janela.getContentPane().add(check);
-		check.addActionListener(this);
+		check.addActionListener(new ActionListener() {
 
-				
-	}
-
-
-	public void actionPerformed(ActionEvent e) {
-		
-		@SuppressWarnings("deprecation")
-		String msgErro = control.verificaCadastro(txtNome.getText(), txtEmail.getText(),
+			@SuppressWarnings("deprecation")
+			public void actionPerformed(ActionEvent e) {
+				String msgErro = control.verificaCadastro(txtNome.getText(), txtEmail.getText(),
 						
 				txtsenha.getText());
 
@@ -160,16 +132,19 @@ public class CadastrarPessoa extends JFrame implements ActionListener {
 					JOptionPane.showMessageDialog(null, "Confirmar Cadastro", "Deseja Confirmar o Cadastro ?",
 							JOptionPane.DEFAULT_OPTION);
 
-
 					Dados.getPessoas().add(new Pessoa(txtNome.getText(), txtEmail.getText(), 
 					txtsenha.getText()));
 
-					
-					janela.setVisible(false);
+					// outros
+					janela.dispose();
 					new TelaLoging();
-					
 				}
 			}
 		});
+
+		;
 	}
-}
+
+
+	
+	}
