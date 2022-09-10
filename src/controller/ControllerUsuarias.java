@@ -1,17 +1,13 @@
 package controller;
 
-
-
-import java.util.Date;
-
-import model.Ciclo;
 import model.Dados;
 import model.Pessoa;
 
 /**
  * Equipara se os dados fornecidos estão nos dados cadastrados de usuário
- * @author Maria Abritta e Thyago Moura 
- * @version 1.0 (Abril 2022)
+ * @author Mylena e Sabrina
+ * @since 2022
+ * @version 1.0 
  */
 
 

@@ -1,6 +1,5 @@
 package view;
 
-import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -8,7 +7,6 @@ import javax.swing.JPanel;
 import java.awt.Font;
 import java.awt.Color;
 import javax.swing.JTextField;
-import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
 import controller.ControllerLoging;
@@ -24,7 +22,7 @@ import java.awt.event.ActionEvent;
  * @author Mylena e Sabrina
  * @version 1.0
  */
-public class TelaLoging extends JFrame implements ActionListener {
+public class TelaLoging extends JFrame {
 
 	private JPanel painel = new JPanel();
 	private  JFrame janela = new JFrame("Login");
@@ -33,11 +31,11 @@ public class TelaLoging extends JFrame implements ActionListener {
 	static Pessoa usuariaLogada;
 	JLabel titulo = new JLabel("Loging");
 	JLabel descricao = new JLabel("Insira seus dados abaixo ");
-	JLabel nome = new JLabel("Nome em letras maiusculas:");
-	JLabel senha = new JLabel("Senha começando com 3 letras maiusculas e 4 numeros: ");
+	JLabel txtEmail = new JLabel("Digite seu email:");
+	JLabel senha = new JLabel("Digite sua senha: ");
 	JButton logar = new JButton("Entrar");
 
-		/**
+	/**
 	 * Create the application.
 	 */
 	
@@ -50,6 +48,10 @@ public class TelaLoging extends JFrame implements ActionListener {
 		setContentPane(painel);
 		painel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		
+		janela.setLayout(null);
+		janela.setVisible(true);
+
+
 		titulo.setForeground(new Color(240,92,138));
 		titulo.setFont(new Font("Didot", Font.PLAIN, 37));
 		titulo.setBounds(245, 35, 500, 50);
@@ -63,9 +65,9 @@ public class TelaLoging extends JFrame implements ActionListener {
 		janela.getContentPane().add(descricao);
 
 				
-		nome.setFont(new Font("Cambria", Font.PLAIN, 18));
-		nome.setBounds(55, 160, 370, 30);
-		janela.getContentPane().add(nome);
+		txtEmail.setFont(new Font("Cambria", Font.PLAIN, 18));
+		txtEmail.setBounds(55, 160, 370, 30);
+		janela.getContentPane().add(txtEmail);
 
 
 		textField.setBounds(55, 190, 495, 25);
@@ -87,22 +89,27 @@ public class TelaLoging extends JFrame implements ActionListener {
 		logar.setFont(new Font("Cambria", Font.PLAIN, 22));
 		logar.setBounds(230, 350, 140, 50);
 		janela.getContentPane().add(logar);
-		logar.addActionListener(this);
 
-		/**
-		 * Tenta encontrar se o usu�rio j� foi cadastrado ou n�o.
-		 */
+		logar.addActionListener(new ActionListener() {
 		
+		/**
+		 * Tenta encontrar se o usuario ja foi cadastrado ou nao.
+		 */
+			@SuppressWarnings("deprecation")
+			public void actionPerformed(ActionEvent e) {
+
+				TelaLoging.usuariaLogada = ControllerLoging.validarLogin(textField.getText(), passwordField.getText());
+				if (TelaLoging.usuariaLogada == null) {
+					// login deu errado, refazer login
+				} else {
+					janela.dispose();
+					new Menu();
+				}
+			}
+		});
 			
 	}
-
-	public void actionPerformed(ActionEvent e) {
-		Object click = e.getSource();
-
-		TelaLoging.usuariaLogada = ControllerLoging.validarLogin(textField.getText(), passwordField.getText());
-		if(click == logar) {
-			new Menu();
-			janela.setVisible(false);
-		} 
-	}
 }
+
+	
+	

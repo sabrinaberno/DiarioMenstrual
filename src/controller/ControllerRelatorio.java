@@ -16,8 +16,9 @@ import view.TelaRelatorio;
 /**
  * Classe auxiliar que contém métodos úteis para sua respectivaa classe
  * controller.
- * 
- * @author Eduardo Rodrigues
+ * @author Mylena e Sabrina
+ * @since 2022
+ * @version 1.0
  */
 public class ControllerRelatorio {
 	TelaRelatorio view;

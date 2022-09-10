@@ -14,6 +14,12 @@ import model.SintomaMental;
 import view.CadastrarMental;
 
 
+/**
+ * @author Mylena e Sabrina
+ * @since 2022
+ * @version 1.0
+ */
+
 public class ControllerMental {
 	private Ciclo cicloEscolhido;
 

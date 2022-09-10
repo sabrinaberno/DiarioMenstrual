@@ -5,8 +5,9 @@ import model.Pessoa;
 
 /**
  * Equipara se os dados fornecidos est�o nos dados cadastrados de loging
- * @author Maria Abritta e Thyago Moura 
- * @version 1.0 (Abril 2022)
+ * @author Mylena e Sabrina
+ * @since 2022
+ * @version 1.0
  */
 
 
@@ -18,8 +19,8 @@ public class ControllerLoging {
 	}
 	
 	/**
-	 * Verifica se o nome e senha colocados no loging foram cadastrados
-	 * @param nome e senha 
+	 * Verifica se o email e senha colocados no loging foram cadastrados
+	 * @param email e senha 
 	 * @return nada, mas dentro o if ele "retorna" a libera��o do usuario para o Usuario
 	 */
 	public static Pessoa validarLogin(String login, String senha) {

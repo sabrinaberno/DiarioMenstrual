@@ -2,7 +2,13 @@ package controller;
 
 import model.*;
 
-
+/**
+ * Classe que contém toda a lógica por trás da classe  Detalhe Físco.
+ * 
+ * @author Mylena e Sabrina.
+ * @since 2022
+ * @version 1.0 
+ */
 
 
 public class ControleFisicos{
