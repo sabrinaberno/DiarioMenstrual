@@ -6,10 +6,13 @@ import javax.swing.JPanel;
 
 import java.awt.Font;
 import java.awt.Color;
+import java.awt.EventQueue;
+
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
-import controller.ControllerLoging;
+import control.CadastrarPessoaControl;
+
 import model.Pessoa;
 
 import javax.swing.JPasswordField;
@@ -24,6 +27,9 @@ import java.awt.event.ActionEvent;
  */
 public class TelaLoging extends JFrame {
 
+	
+	private CadastrarPessoaControl controller;
+	private static final long serialVersionUID = 1L;
 	private JPanel painel = new JPanel();
 	private  JFrame janela = new JFrame("Login");
 	private JTextField textField = new JTextField();;
@@ -33,7 +39,20 @@ public class TelaLoging extends JFrame {
 	JLabel descricao = new JLabel("Insira seus dados abaixo ");
 	JLabel txtEmail = new JLabel("Digite seu email:");
 	JLabel senha = new JLabel("Digite sua senha: ");
-	JButton logar = new JButton("Entrar");
+	JButton entrar = new JButton("Entrar");
+	
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					TelaLoging window = new TelaLoging();
+					window.janela.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
 
 	/**
 	 * Create the application.
@@ -43,7 +62,7 @@ public class TelaLoging extends JFrame {
 
 		janela.setBounds(100, 100, 600, 600);
 		janela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		janela.getContentPane().setLayout(null);
+		janela.getContentPane().setLayout(null);		
 		painel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(painel);
 		painel.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -65,7 +84,7 @@ public class TelaLoging extends JFrame {
 		janela.getContentPane().add(descricao);
 
 				
-		txtEmail.setFont(new Font("Cambria", Font.PLAIN, 18));
+		txtEmail.setFont(new Font("Roboto", Font.PLAIN, 18));
 		txtEmail.setBounds(55, 160, 370, 30);
 		janela.getContentPane().add(txtEmail);
 
@@ -74,7 +93,7 @@ public class TelaLoging extends JFrame {
 		janela.getContentPane().add(textField);
 
 		
-		senha.setFont(new Font("Cambria", Font.PLAIN, 18));
+		senha.setFont(new Font("Roboto", Font.PLAIN, 18));
 		senha.setBounds(55, 235, 495, 35);
 		janela.getContentPane().add(senha);
 
@@ -83,33 +102,33 @@ public class TelaLoging extends JFrame {
 		janela.getContentPane().add(passwordField);
 		
 
-		logar.setBackground(new Color(250,224,228));
-		logar.setForeground(Color.BLACK);
-		logar.setBorder(BorderFactory.createLineBorder(new Color(179,136,235), 2));
-		logar.setFont(new Font("Cambria", Font.PLAIN, 22));
-		logar.setBounds(230, 350, 140, 50);
-		janela.getContentPane().add(logar);
+		entrar.setBackground(new Color(250,224,228));
+		entrar.setForeground(Color.BLACK);
+		entrar.setBorder(BorderFactory.createLineBorder(new Color(179,136,235), 2));
+		entrar.setFont(new Font("Digot", Font.PLAIN, 22));
+		entrar.setBounds(230, 350, 140, 50);
+		janela.getContentPane().add(entrar);
 
-		logar.addActionListener(new ActionListener() {
+		entrar.addActionListener(new ActionListener() {
 		
 		/**
 		 * Tenta encontrar se o usuario ja foi cadastrado ou nao.
 		 */
-			@SuppressWarnings("deprecation")
-			public void actionPerformed(ActionEvent e) {
-
-				TelaLoging.usuariaLogada = ControllerLoging.validarLogin(textField.getText(), passwordField.getText());
+			@Override
+			public void actionPerformed(ActionEvent e) {				
+				TelaLoging.usuariaLogada = CadastrarPessoaControl.validarLogin(textField.getText(), passwordField.getText());
 				if (TelaLoging.usuariaLogada == null) {
 					// login deu errado, refazer login
 				} else {
 					janela.dispose();
-					new Menu();
+					new TelaMenu();
 				}
 			}
 		});
 			
 	}
+	
+	
 }
-
 	
 	
