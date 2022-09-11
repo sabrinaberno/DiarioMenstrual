@@ -36,7 +36,7 @@ import java.text.ParseException;
  */
 public class CadastrarPessoa {
 	
-	private CadastrarPessoaControl controller;
+	CadastrarPessoaControl controller = new CadastrarPessoaControl();
 	private JPanel painel = new JPanel();
 	private  JFrame janela = new JFrame("Cadastro");	
 	JLabel titulo = new JLabel("Cadastro");
@@ -146,10 +146,13 @@ public class CadastrarPessoa {
 		 */
 
 		check.addActionListener(new ActionListener() {
-
+			
 
 			@SuppressWarnings("deprecation")
 			public void actionPerformed(ActionEvent e) {
+				
+				
+				
 				String msgErro = controller.verificaCadastro(nome.getText(),nascimento.getText(), email.getText(),
 				senha.getText());
 
@@ -173,7 +176,9 @@ public class CadastrarPessoa {
 					janela.dispose();
 					TelaLoging.main(null);
 				}
+				
 			}
+			
 		});
 
 		

@@ -12,9 +12,9 @@ public class Dados1 {
 	public void fillWithSomeData() {
 		
 		for(int i = 0; i < 5; i++) {
-			sintomasMentais[i] = new SintomaMental("Sintoma mental"+i,"insuportável"+i,"25/09/1998"); 
+			sintomasMentais[i] = new SintomaMental("Sintoma mental"+i,"insuportável"+i,"20/05/2022"); 
 					
-			sintomasFisicos[i] = new SintomaFisico("Sintoma fisico"+i,(i+1), "útero"+i, "25/09/1998");
+			sintomasFisicos[i] = new SintomaFisico("Sintoma Físico"+i,(i+1), "útero"+i, "25/08/2022");
 				
 		}
 		

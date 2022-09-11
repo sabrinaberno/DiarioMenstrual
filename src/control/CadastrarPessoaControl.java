@@ -101,9 +101,15 @@ public class CadastrarPessoaControl {
 	
 	public boolean validarNascimento(String nascimentoInput) {
 		boolean verificar = true;
-		if (!nascimentoInput.substring(0).matches("[1-31]/1-12]/1500-2022]*")) {
+		/*if (!nascimentoInput.substring(0,1).matches("[01-31]*")) { 
 			verificar = false;
 		}
+		if (!nascimentoInput.substring(3,4).matches("[01-12]*")) { 
+			verificar = false;
+		}
+		if (!nascimentoInput.substring(5,9).matches("[1500-2022]*")) { 
+			verificar = false;
+		}*/
 		return verificar;
 	}
 
@@ -141,7 +147,7 @@ public class CadastrarPessoaControl {
 		if (!senhaValid.substring(0, 4).matches("[A-Z]*")) {
 			verificar = false;
 		}
-		if (!senhaValid.substring(2).matches("[0-9]*")) {
+		if (!senhaValid.substring(5, 6).matches("[0-9]*")) {
 			verificar = false;
 		}
 		return verificar;
