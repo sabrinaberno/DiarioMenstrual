@@ -6,7 +6,7 @@ import java.util.Date;
 * Classe SintomaMental simula o comportamento de um sintoma mental e herda de Sintoma.
 * @author Mylena e Sabrina.
 * @since 2022
-* @version 1.0
+* @version 2.0
 **/
 
 
@@ -64,4 +64,3 @@ public class SintomaMental extends Sintoma {
 
 	
 	}
-
