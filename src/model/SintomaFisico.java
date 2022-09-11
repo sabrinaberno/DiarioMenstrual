@@ -1,12 +1,12 @@
 package model;
 
-import java.util.Date;
+
 
 /**
 * Classe SintomaFisico simula o comportamento de um sintoma físico e herda de Sintoma.
 * @author Mylena e Sabrina.
 * @since 2022
-* @version 1.0
+* @version 2.0
 **/
 
 public class SintomaFisico extends Sintoma {
@@ -24,7 +24,7 @@ public class SintomaFisico extends Sintoma {
 	 
 	 */	
 	
-	public SintomaFisico(String n, String l,int i, Date c) {
+	public SintomaFisico(String n, int i,String l, String c) {
 		this.nome = n;
 		this.local= l;
 		this.intensidade=i;

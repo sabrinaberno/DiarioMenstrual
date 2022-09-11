@@ -1,47 +1,62 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.List;
+
 /**
- * Recebe os dados gerais do usuário, além de editar esses dados.
- * @author Maria Abritta e Thyago Moura 
- * @version 1.0 (Abril 2022)
+ * Classe que contem os atributos de uma pessoa
+ * 
+ * @author Mylena e Sabrina.
  */
 public class Pessoa {
+	private final ArrayList<Ciclo> ciclos;
 	private String nome;
-	private String senha;
+	private String nascimento;
 	private String email;
-	private static ArrayList<Ciclo> ciclos = new ArrayList<>();
+	private String senha;
+	
 
-	public Pessoa(String n, String s, String e) {
-		nome = n;
-		senha = s;
-		email=e;
-		
+	/**
+	 * Gera uma pessoa e ciclos recebe uma ArrayList em branco. ]
+	 * 
+	 * @param nome                   nome da pessoa
+	 * @param nascimento             data de nascimento
+	 * @param email                   email
+	 * @param senha                  senha
+	 */
+	public Pessoa(String n,  String dn, String e, String s) {
+		this.nome = n;
+		this.nascimento = dn;
+		this.email=e;
+		this.senha=s;
+		this.ciclos = new ArrayList<>();
 	}
 
 	public String getNome() {
 		return nome;
 	}
 
-	public String setNome(String nome) {
-		return this.nome = nome;
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 
 	
 
-	public String getSenha() {
-		return senha;
+	public String getNascimento() {
+		return nascimento;
 	}
 
-	public void setSenha(String senha) {
-		this.senha = senha;
+	public void setNascimento(String nascimento) {
+		this.nascimento = nascimento;
 	}
 
 	
 
+	public List<Ciclo> getCiclos() {
+		return ciclos;
+	}
 	
-
-
+	
 	public String getEmail() {
 		return email;
 	}
@@ -49,22 +64,25 @@ public class Pessoa {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-
-	public static ArrayList<Ciclo> getCiclos() {
-		return ciclos;
+	
+	public String getSenha() {
+		return senha;
 	}
 
-
-
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
+	
 	/**
-	 * Atualiza os dados existentes para os dados editados.
-	 * @param nome, email, rg, cpf, senha, telefone
+	 * Atualiza os dados existentes para os dados editados
+	 * TALVEZ SEJA MELHOR COLOCAR NO CONTROLLER
+	 * 
 	 */
-	public void editarDados(String n,  String s, String e) {
+	public void editarDados(String n,  String s, String e, String dn) {
 		this.setNome(n);	
 		this.setSenha(s);
 		this.setEmail(e);
+		this.setNascimento(dn);
 	
 	}
-
 }

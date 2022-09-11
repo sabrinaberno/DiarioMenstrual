@@ -7,12 +7,15 @@ import javax.swing.JOptionPane;
 import java.awt.Color;
 import javax.swing.JTextField;
 import javax.swing.JButton;
+import javax.swing.JFormattedTextField;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Font;
 import javax.swing.SwingConstants;
 
-import controller.ControllerUsuarias;
+import control.CadastrarPessoaControl;
+
 import model.Dados;
 
 import javax.swing.JPasswordField;
@@ -23,32 +26,22 @@ import java.awt.event.MouseEvent;
 import java.awt.SystemColor;
 
 /**
- * Tela de editar usu�rio.
- * @author Maria Abritta e Thyago Moura 
- * @version 1.0 (Abril 2022)
+ * Tela para editar os dados de pessoa
+ * @author Mylena e Sabrina
  */
 public class TelaEditarUsuaria {
 
 	private JFrame frame;
 	public JTextField txtNome;
 	public JTextField txtEmail;
+    public JFormattedTextField txtNascimento;
 	public JPasswordField senha;
+	private CadastrarPessoaControl controller;
 
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					TelaEditarUsuaria window = new TelaEditarUsuaria();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+	
 
 	/**
 	 * Create the application.
@@ -61,7 +54,7 @@ public class TelaEditarUsuaria {
 	 * Initialize the contents of the frame.
 	 */
 	public void initialize() {
-		ControllerUsuarias control = new ControllerUsuarias();
+		CadastrarPessoaControl controller = new CadastrarPessoaControl();
 
 		frame = new JFrame();
 		frame.setBounds(100, 100, 450, 639);
@@ -114,8 +107,7 @@ public class TelaEditarUsuaria {
 		check.addActionListener(new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
-				String msgErro = control.verificaCadastro(txtNome.getText(), txtEmail.getText(), 
-					
+				String msgErro = controller.verificaCadastro(txtNome.getText(), txtEmail.getText(),  txtNascimento.getText(),					
 						TelaLoging.usuariaLogada.getSenha());
 
 				if (msgErro == null) {
@@ -132,13 +124,10 @@ public class TelaEditarUsuaria {
 							JOptionPane.DEFAULT_OPTION);
 
 					Dados.getPessoas().get(Dados.getPessoas().indexOf(TelaLoging.usuariaLogada)).editarDados(
-							txtNome.getText(), txtEmail.getText(), 
-							TelaLoging.usuariaLogada.getSenha());
+							txtNome.getText(),txtNascimento.getText(), txtEmail.getText(), senha.getText());
 
 
-					// outros
-					frame.dispose();
-					Menu.main(null);
+					
 				}
 			}
 		});
@@ -175,6 +164,18 @@ public class TelaEditarUsuaria {
 
 			private void showMenu(MouseEvent e) {
 				popup.show(e.getComponent(), e.getX(), e.getY());
+			}
+		});
+	}
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					TelaEditarUsuaria window = new TelaEditarUsuaria();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
 			}
 		});
 	}
