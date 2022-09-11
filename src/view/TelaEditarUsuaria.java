@@ -38,11 +38,21 @@ public class TelaEditarUsuaria {
 	public JPasswordField senha;
 	private CadastrarPessoaControl controller;
 
+	/**
+	 * Launch the application.
+	 */
+	
 
+	/**
+	 * Create the application.
+	 */
 	public TelaEditarUsuaria() {
 		initialize();
 	}
 
+	/**
+	 * Initialize the contents of the frame.
+	 */
 	public void initialize() {
 		CadastrarPessoaControl controller = new CadastrarPessoaControl();
 
@@ -88,7 +98,7 @@ public class TelaEditarUsuaria {
 		
 
 		/**
-		 * Verifica os dados.
+		 * Faz a verifica��o das verifica��es necess�rias de cada informa��o.
 		 */
 		JButton check = new JButton("OK");
 		check.setFont(new Font("Cambria", Font.PLAIN, 11));

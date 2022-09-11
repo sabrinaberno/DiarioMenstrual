@@ -1,6 +1,7 @@
 package model;
 
 import java.util.ArrayList;
+
 import java.util.List;
 
 /**
@@ -13,7 +14,10 @@ public abstract class Dados {
 	private static final ArrayList<SintomaMental > mentais = new ArrayList<>();
 	private static final ArrayList<SintomaFisico > fisicos = new ArrayList<>();
 	private static final ArrayList<Ciclo > ciclos = new ArrayList<>();
+	
+	
 
+	
 	
 	private Dados() {
 	}
@@ -33,4 +37,7 @@ public abstract class Dados {
 	public static List<Ciclo > getCiclos() {
 		return ciclos;
 	}
+	
+	
+	
 }

@@ -18,9 +18,11 @@ import javax.swing.JScrollPane;
 import java.awt.Font;
 
 /**
- * Um painel que mostra os sintomas cadastrados nos ciclos
+ * JPanel para mostrar um relatorio de filmes.
  * 
- * @author Mylena e Sabrina
+ * Herda a classe JRelatorios que cont�m um fundo, t�tulo e um bot�o.
+ * 
+ * @author Eduardo Rodrigues
  */
 public class Relatorio implements ActionListener {
 	
@@ -103,9 +105,9 @@ public class Relatorio implements ActionListener {
 	}
 
 	/**
-	 * Executa o botão selecionado
+	 * Executa o comando para o bot�o selecionado.
 	 * 
-	 * implementação da ActionListener
+	 * implementa��o da interface ActionListener
 	 */
 	public void actionPerformed(ActionEvent e) {
 		controller.executarBotao(e.getSource());
