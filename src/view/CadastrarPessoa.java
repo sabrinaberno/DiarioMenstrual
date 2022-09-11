@@ -25,10 +25,6 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Font;
 import javax.swing.JPasswordField;
-import javax.swing.JPopupMenu;
-import java.awt.Component;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 import java.text.ParseException;
 
 
@@ -43,9 +39,6 @@ public class CadastrarPessoa {
 	private CadastrarPessoaControl controller;
 	private JPanel painel = new JPanel();
 	private  JFrame janela = new JFrame("Cadastro");	
-	private JTextField fieldNome;
-	private JTextField fieldEmail;
-	private JPasswordField passwordField = new JPasswordField();;
 	JLabel titulo = new JLabel("Cadastro");
 	JLabel descricao = new JLabel("Insira seus dados abaixo ");
 	JLabel txtEmail = new JLabel("Qual o seu e-mail?");
@@ -55,7 +48,7 @@ public class CadastrarPessoa {
 	JButton check = new JButton("Cadastrar");
 	public static JTextField nome;
 	public static JTextField email;
-	public static JPasswordField senha;
+	public static JPasswordField senha = new JPasswordField();
 	public static JFormattedTextField nascimento;
 	
 	public static void main(String[] args) {
@@ -129,16 +122,16 @@ public class CadastrarPessoa {
 		nascimento.setBounds(55, 260, 370, 20);
 		janela.add(nascimento);	
 		
-		fieldNome = new JTextField();
-		fieldNome.setBounds(55, 190, 495, 25);
-		janela.getContentPane().add(fieldNome);
+		nome = new JTextField();
+		nome.setBounds(55, 190, 495, 25);
+		janela.getContentPane().add(nome);
 
-		fieldEmail = new JTextField();	
-		fieldEmail.setBounds(55, 330, 495, 25);
-		janela.getContentPane().add(fieldEmail);
+		email = new JTextField();	
+		email.setBounds(55, 330, 495, 25);
+		janela.getContentPane().add(email);
 		
-		passwordField.setBounds(55, 400, 495, 25);
-		janela.getContentPane().add(passwordField);
+		senha.setBounds(55, 400, 495, 25);
+		janela.getContentPane().add(senha);
 		
 
 		check.setBackground(new Color(250,224,228));
@@ -154,13 +147,11 @@ public class CadastrarPessoa {
 
 		check.addActionListener(new ActionListener() {
 
-			/* (non-Javadoc)
-			 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
-			 */
+
 			@SuppressWarnings("deprecation")
 			public void actionPerformed(ActionEvent e) {
-				String msgErro = controller.verificaCadastro(txtNome.getText(),txtDtNascimento.getText(), txtEmail.getText(),
-						senha.getText());
+				String msgErro = controller.verificaCadastro(nome.getText(),nascimento.getText(), email.getText(),
+				senha.getText());
 
 				if (msgErro == null) {
 					JOptionPane.showMessageDialog(null, "Preencha todos os campos!",
@@ -186,20 +177,10 @@ public class CadastrarPessoa {
 		});
 
 		
-		
-
-
-		
-
-		
-
-
-
-		janela.getContentPane().add(check);
-
-		
+				
 	}
 
+ 
 	public static JTextField getNome() {
 		return nome;
 	}
@@ -226,5 +207,5 @@ public class CadastrarPessoa {
 	}
 
 
-	
+
 }
