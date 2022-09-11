@@ -1,6 +1,6 @@
 package model;
 
-import java.util.Date;
+
 
 /**
 * Classe Sintoma simula o comportamento de um sintoma e é a classe pai.
@@ -10,7 +10,7 @@ import java.util.Date;
 **/
 
 public abstract class Sintoma {
-	protected Date cadastro;
+	protected String cadastro;
 	protected String nome;	
 	
 	
@@ -20,13 +20,13 @@ public abstract class Sintoma {
 	
 	
 
-	public  Date getCadastro() {
+	public  String getCadastro() {
 		return cadastro;
 	}
 
 
 
-	public void setCadastro(Date cadastro) {
+	public void setCadastro(String cadastro) {
 		this.cadastro = cadastro;
 	}
 
@@ -44,3 +44,5 @@ public abstract class Sintoma {
 		this.nome = nome;
 	}
 }
+
+

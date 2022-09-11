@@ -5,9 +5,9 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * Classe molde de Ciclo
+ * Classe que armazena as informa��es de um filme.
  * 
- * @author Mylena e Sabrina
+ * @author Eduardo Rodrigues
  */
 public class Ciclo {
 	private String numero;
@@ -19,6 +19,16 @@ public class Ciclo {
 	
 	
 
+	/**
+	 * Gera um filme, nomeAtores recebe uma nova ArrayList em branco.
+	 * 
+	 * @param nome                 nome do filme
+	 * @param mesesDesenvolvimento numero de meses de desenvolvimento
+	 * @param anoLancamento        ano do lancamento
+	 * @param numCopyright         numero de copyright do filme
+	 * @param custoTotal           custo total de producao
+	 * @param diretor              diretor do filme
+	 */
 	public Ciclo(String n, int d, Date i,Date f ) {
 		this.numero = n;
 		this.duracao = d;	

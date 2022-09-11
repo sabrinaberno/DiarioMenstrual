@@ -3,6 +3,9 @@ package view;
 import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+
+import control.DadosControl;
+
 import java.awt.Font;
 import java.awt.Color;
 import javax.swing.JButton;
@@ -17,11 +20,12 @@ public class TelaMenu {
 
 	private JFrame janela;
 	JLabel titulo = new JLabel("Diário menstrual");
-	JButton usuaria = new JButton("Editar dados pessoa");
+	JButton usuaria = new JButton("Editar pessoa");
 	JButton ciclo = new JButton("Cadastrar Ciclo");
 	JButton mental = new JButton("Sintomas mentais");
 	JButton fisico = new JButton("Sintomas físicos");
 	JButton relatorio = new JButton("Relatório");
+	public static DadosControl dados = new DadosControl();
 	
 
 	public static void main(String[] args) {
@@ -80,7 +84,7 @@ public class TelaMenu {
 				Object src = e.getSource();
 				if (src == ciclo) {
 					janela.dispose();
-					CadastrarPessoa.main(null);
+					CadastrarCiclo.main(null);
 				}
 			}
 		});
@@ -94,8 +98,7 @@ public class TelaMenu {
 			public void actionPerformed(ActionEvent e) {
 				Object src = e.getSource();
 				if (src == mental) {
-					janela.dispose();
-					CadastrarPessoa.main(null);
+					new TelaSintoma().mostrarDados(dados, 2);
 				}
 			}
 		});
@@ -109,8 +112,7 @@ public class TelaMenu {
 			public void actionPerformed(ActionEvent e) {
 				Object src = e.getSource();
 				if (src == fisico) {
-					janela.dispose();
-					CadastrarPessoa.main(null);
+					new TelaSintoma().mostrarDados(dados, 2);
 				}
 			}
 		});
@@ -124,7 +126,8 @@ public class TelaMenu {
 				Object src = e.getSource();
 				if (src == relatorio) {
 					janela.dispose();
-					CadastrarPessoa.main(null);
+					Relatorio.main(null);
+					
 				}
 			}
 		});
@@ -140,11 +143,3 @@ public class TelaMenu {
 	}
 
 }
-
-
-
-
-		
-		
-
-		

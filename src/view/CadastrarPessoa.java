@@ -33,8 +33,9 @@ import java.text.ParseException;
 
 
 /**
- * Tela de cadastro de pessoa/usuária
- * @author Mylena e Sabrina
+ * Tela de cadastro de usuário.
+ * @author Maria Abritta e Thyago Moura 
+ * @version 1.0 (Abril 2022)
  */
 public class CadastrarPessoa {
 	
@@ -47,7 +48,7 @@ public class CadastrarPessoa {
 	JLabel titulo = new JLabel("Cadastro");
 	JLabel descricao = new JLabel("Insira seus dados abaixo ");
 	JLabel txtEmail = new JLabel("Qual o seu e-mail?");
-	JLabel txtSenha = new JLabel("Escolha uma senha (4 letras minúsculas e 2 números) ");
+	JLabel txtSenha = new JLabel("Escolha uma senha (4 letras maiúsculas e 2 números) ");
 	JLabel txtNome = new JLabel("Qual o seu nome? ");
 	JLabel txtDtNascimento = new JLabel("Qual a sua data de nascimento? ");
 	JButton check = new JButton("Cadastrar");

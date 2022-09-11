@@ -130,7 +130,7 @@ public class CadastrarPessoaControl {
 
 	/**
 	 * Verifica a respota da senha do usuário. Faz as verificações:
-	 * (1) Se a resposta contém necessariamente 7 caracteres.
+	 * (1) Se a resposta contém necessariamente 6 caracteres.
 	 * (2) Se a resposta contém 4 letras maiúsculas e 2 números.
 	 * @param senhaValid
 	 * @return booleano verdadeiro ou falso.
@@ -161,4 +161,3 @@ public class CadastrarPessoaControl {
 
 	
 }
-

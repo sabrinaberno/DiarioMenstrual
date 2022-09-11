@@ -12,6 +12,15 @@ import model.SintomaFisico;
 import model.SintomaMental;
 
 
+
+/**
+ * Classe auxiliar que cont�m a l�gica por tr�s da classe RelatorioFilmes.
+ * 
+ * @author Eduardo Rodrigues
+ * 
+ * @see RelatorioFilmes
+ * @see RelatorioFilmesHelper
+ */
 public class RelatorioControl {
 
 

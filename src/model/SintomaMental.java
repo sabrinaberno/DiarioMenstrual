@@ -1,6 +1,6 @@
 package model;
 
-import java.util.Date;
+
 
 /**
 * Classe SintomaMental simula o comportamento de um sintoma mental e herda de Sintoma.
@@ -26,7 +26,7 @@ public class SintomaMental extends Sintoma {
 	 
 	 */	
 	
-	public SintomaMental(String n,String d, Date c) {
+	public SintomaMental(String n,String d, String c) {
 		this.nome = n;
 		this.cadastro= c;		
 		this.descricao=d;
@@ -52,15 +52,11 @@ public class SintomaMental extends Sintoma {
 		this.descricao = descricao;
 	}
 
-	public Date getCadastro() {
-		return cadastro;
-	}
-	public void setCadastro(Date cadastro) {
-		this.cadastro= cadastro;
-	}
+	
 
 	
 
 
 	
 	}
+
