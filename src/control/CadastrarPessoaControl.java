@@ -1,7 +1,5 @@
 package control;
 
-
-
 import model.Dados;
 import model.Pessoa;
 import view.CadastrarPessoa;

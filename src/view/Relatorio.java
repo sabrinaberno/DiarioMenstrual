@@ -18,12 +18,13 @@ import javax.swing.JScrollPane;
 import java.awt.Font;
 
 /**
- * JPanel para mostrar um relatorio de filmes.
+ *  Tela que mostra o relatório os ciclos e seus sintomas 
  * 
- * Herda a classe JRelatorios que cont�m um fundo, t�tulo e um bot�o.
- * 
- * @author Eduardo Rodrigues
+ * @author Mylena e Sabrina 
+ * @since 2022
+ * @version 1.0 
  */
+
 public class Relatorio implements ActionListener {
 	
 	private JButton buttonVoltar;	

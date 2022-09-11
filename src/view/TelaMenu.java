@@ -14,8 +14,9 @@ import java.awt.event.ActionEvent;
 /**
  * Tela de menu.
  * @author Mylena e Sabrina
- * @version 2.0 
+ * @version 1.0 
  */
+
 public class TelaMenu {
 
 	private JFrame janela;
@@ -75,7 +76,7 @@ public class TelaMenu {
 		});
 		usuaria.setBackground(new Color(227,99,151));
 		usuaria.setFont(new Font("Roboto", Font.BOLD, 18));
-		usuaria.setBounds(210, 150, 200, 40);
+		usuaria.setBounds(185, 150, 250, 40);
 		janela.getContentPane().add(usuaria);
 
 		
@@ -84,13 +85,13 @@ public class TelaMenu {
 				Object src = e.getSource();
 				if (src == ciclo) {
 					janela.dispose();
-					CadastrarCiclo.main(null);
+					//CadastrarCiclo.main(null);
 				}
 			}
 		});
 		ciclo.setFont(new Font("Roboto", Font.BOLD, 18));
 		ciclo.setBackground(new Color(245,183,0));
-		ciclo.setBounds(210, 210, 200, 40);
+		ciclo.setBounds(185, 210, 250, 40);
 		janela.getContentPane().add(ciclo);
 
 		
@@ -98,13 +99,13 @@ public class TelaMenu {
 			public void actionPerformed(ActionEvent e) {
 				Object src = e.getSource();
 				if (src == mental) {
-					new TelaSintoma().mostrarDados(dados, 2);
+					new TelaSintoma().mostrarDados(dados, 1);
 				}
 			}
 		});
 		mental.setFont(new Font("Roboto", Font.BOLD, 18));
 		mental.setBackground(new Color(60,145,230));
-		mental.setBounds(210, 270, 200, 40);
+		mental.setBounds(185, 270, 250, 40);
 		janela.getContentPane().add(mental);
 
 		
@@ -112,13 +113,13 @@ public class TelaMenu {
 			public void actionPerformed(ActionEvent e) {
 				Object src = e.getSource();
 				if (src == fisico) {
-					new TelaSintoma().mostrarDados(dados, 2);
+					new TelaSintoma().mostrarDados(dados,2);
 				}
 			}
 		});
 		fisico.setFont(new Font("Roboto", Font.BOLD, 18));
 		fisico.setBackground(new Color(105,220,158));
-		fisico.setBounds(210, 330, 200, 40);
+		fisico.setBounds(185, 330, 250, 40);
 		janela.getContentPane().add(fisico);
 		
 		relatorio.addActionListener(new ActionListener() {
@@ -133,7 +134,7 @@ public class TelaMenu {
 		});
 		relatorio.setFont(new Font("Roboto", Font.BOLD, 18));
 		relatorio.setBackground(new Color(250,130,76));
-		relatorio.setBounds(210, 390, 200, 40);
+		relatorio.setBounds(185, 390, 250, 40);
 		janela.getContentPane().add(relatorio);
 	}
 

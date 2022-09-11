@@ -5,9 +5,11 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * Classe que armazena as informa��es de um filme.
+ * Classe que contem os atributos de um ciclo
  * 
- * @author Eduardo Rodrigues
+ * @author Mylena e Sabrina.
+ * @since 2022
+ * @version 1.0
  */
 public class Ciclo {
 	private String numero;
@@ -20,14 +22,14 @@ public class Ciclo {
 	
 
 	/**
-	 * Gera um filme, nomeAtores recebe uma nova ArrayList em branco.
+	 * Gera um ciclo
 	 * 
-	 * @param nome                 nome do filme
-	 * @param mesesDesenvolvimento numero de meses de desenvolvimento
-	 * @param anoLancamento        ano do lancamento
-	 * @param numCopyright         numero de copyright do filme
-	 * @param custoTotal           custo total de producao
-	 * @param diretor              diretor do filme
+	 * @param numero              	 indicador para contabilizar o número de ciclos cadstrados
+	 * @param duraco			  	 duração do ciclo
+	 * @param dataFinalMenstruacao 	 último dia da menstruação        
+	 * @param dataInicioMenstruacao  primeiro dia da menstruação e do ciclo      
+	 * @param nomeSintomaFisico      sintomas físicos relacionados ao ciclo     
+	 * @param nomeSintomaMental      sintomas físicos relacionados ao ciclo
 	 */
 	public Ciclo(String n, int d, Date i,Date f ) {
 		this.numero = n;

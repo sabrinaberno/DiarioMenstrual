@@ -7,6 +7,8 @@ import java.util.List;
  * Classe que contem os atributos de uma pessoa
  * 
  * @author Mylena e Sabrina.
+ * @since 2022
+ * @version 1.0
  */
 public class Pessoa {
 	private final ArrayList<Ciclo> ciclos;
@@ -21,7 +23,7 @@ public class Pessoa {
 	 * 
 	 * @param nome                   nome da pessoa
 	 * @param nascimento             data de nascimento
-	 * @param email                   email
+	 * @param email                  email
 	 * @param senha                  senha
 	 */
 	public Pessoa(String n,  String dn, String e, String s) {

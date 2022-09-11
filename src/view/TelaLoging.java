@@ -114,8 +114,8 @@ public class TelaLoging extends JFrame {
 		/**
 		 * Tenta encontrar se o usuario ja foi cadastrado ou nao.
 		 */
-			@Override
-			public void actionPerformed(ActionEvent e) {				
+		@SuppressWarnings("deprecation")
+		public void actionPerformed(ActionEvent e) {				
 				TelaLoging.usuariaLogada = CadastrarPessoaControl.validarLogin(textField.getText(), passwordField.getText());
 				if (TelaLoging.usuariaLogada == null) {
 					// login deu errado, refazer login

@@ -16,8 +16,6 @@ public abstract class Dados {
 	private static final ArrayList<Ciclo > ciclos = new ArrayList<>();
 	
 	
-
-	
 	
 	private Dados() {
 	}

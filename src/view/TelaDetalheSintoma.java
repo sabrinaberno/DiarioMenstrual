@@ -45,7 +45,7 @@ public class TelaDetalheSintoma implements ActionListener {
 
 		janela = new JFrame(s);
 
-		//Preenche dados com dados do aluno clicado
+	
 		if (op == 3) {
 			valorNome = new JTextField(dados.getSintomaMentais()[pos].getNome(), 200);
 			valorDescricao = new JTextField(dados.getSintomaMentais()[pos].getDescricao(),200);
@@ -54,14 +54,14 @@ public class TelaDetalheSintoma implements ActionListener {
 			valorLocal = new JTextField(200);
 				
 
-		} else if (op == 4) { //Preenche dados com dados do professor clicado 
+		} else if (op == 4) { 
 			valorNome = new JTextField(dados.getSintomasFisicos()[pos].getNome(), 200);
 			valorDescricao = new JTextField(200);
 			valorIntensidade = new JTextField(String.valueOf(dados.getSintomasFisicos()[pos].getIntensidade()), 200);
 			valorData = new JTextField(String.valueOf(dados.getSintomasFisicos()[pos].getCadastro()), 200);
 			valorLocal = new JTextField(dados.getSintomasFisicos()[pos].getLocal(), 200);
 
-		} else { //N�o preenche com dados
+		} else { 
 
 			valorNome = new JTextField(200);
 			valorDescricao = new JTextField(200);
@@ -85,14 +85,12 @@ public class TelaDetalheSintoma implements ActionListener {
 		valorLocal.setBounds(180, 110, 180, 25);
 		
 
-		//Coloca os campos relacionados a endereco se aluno
 		if (op == 1 || op == 3 ) {
 			this.janela.add(labelDescricao);
 			this.janela.add(valorDescricao);
 
 		}
 
-		//Coloca campos relacionados a valor hora/aula se professor
 		if (op == 2 || op == 4) {
 
 			this.janela.add(labelIntensidade);

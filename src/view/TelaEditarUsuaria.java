@@ -6,6 +6,7 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import java.awt.Color;
 import javax.swing.JTextField;
+import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JFormattedTextField;
 
@@ -13,6 +14,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Font;
 import javax.swing.SwingConstants;
+import javax.swing.text.MaskFormatter;
 
 import control.CadastrarPessoaControl;
 
@@ -23,87 +25,116 @@ import javax.swing.JPopupMenu;
 import java.awt.Component;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.text.ParseException;
 import java.awt.SystemColor;
 
 /**
  * Tela para editar os dados de pessoa
  * @author Mylena e Sabrina
+ * @since 2021
+ * @version 1.0
  */
 public class TelaEditarUsuaria {
 
-	private JFrame frame;
+	private JFrame janela = new JFrame();
 	public JTextField txtNome;
 	public JTextField txtEmail;
     public JFormattedTextField txtNascimento;
-	public JPasswordField senha;
-	private CadastrarPessoaControl controller;
-
-	/**
-	 * Launch the application.
-	 */
+	public JPasswordField txtSenha = new JPasswordField();
+	public JLabel titulo = new JLabel("Editar");
+	public JButton check = new JButton("Atualizar");
+	public JLabel descricao = new JLabel("Edite os dados necesarios ");
+	public JLabel nome = new JLabel("Nome (Letras maiusculas):");
+	public JLabel email = new JLabel("E-mail:");
+	public JLabel dtNascimento = new JLabel("Data de Nascimento:");
+	public JLabel senha = new JLabel("Senha:");
 	
 
 	/**
-	 * Create the application.
+	 * Initialize the application.
 	 */
+
 	public TelaEditarUsuaria() {
-		initialize();
-	}
-
-	/**
-	 * Initialize the contents of the frame.
-	 */
-	public void initialize() {
 		CadastrarPessoaControl controller = new CadastrarPessoaControl();
+		
+		janela.setBounds(100, 100, 600, 600);
+		janela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		janela.getContentPane().setLayout(null);		
+	
+		
+		janela.setLayout(null);
+		janela.setVisible(true);
 
-		frame = new JFrame();
-		frame.setBounds(100, 100, 450, 639);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.getContentPane().setLayout(null);
 
-		JLabel tituloUm = new JLabel("Insira os dados necesarios ");
-		tituloUm.setFont(new Font("Elephant", Font.PLAIN, 17));
-		tituloUm.setForeground(Color.BLACK);
-		tituloUm.setBackground(Color.CYAN);
-		tituloUm.setBounds(111, 99, 239, 31);
-		frame.getContentPane().add(tituloUm);
+		titulo.setForeground(new Color(240,92,138));
+		titulo.setFont(new Font("Didot", Font.PLAIN, 45));
+		titulo.setBounds(240, 40, 600, 50);
+		janela.getContentPane().add(titulo);	
 
-		JLabel tituloDois = new JLabel("para editar seu cadastro: ");
-		tituloDois.setFont(new Font("Elephant", Font.PLAIN, 17));
-		tituloDois.setBounds(121, 125, 239, 13);
-		frame.getContentPane().add(tituloDois);
+		
+		descricao.setForeground(Color.BLACK);
+		descricao.setFont(new Font("Roboto", Font.PLAIN, 20));
+		descricao.setBounds(180, 95, 300, 30);
+		janela.getContentPane().add(descricao);
 
-		JLabel tituloNome = new JLabel("Nome (Letras maiusculas):");
-		tituloNome.setFont(new Font("Cambria", Font.PLAIN, 15));
-		tituloNome.setBounds(46, 165, 176, 14);
-		frame.getContentPane().add(tituloNome);
+				
+		nome.setFont(new Font("Roboto", Font.PLAIN, 18));
+		nome.setBounds(55, 160, 370, 30);
+		janela.getContentPane().add(nome);
+
 
 		txtNome = new JTextField();
-		txtNome.setBounds(46, 186, 335, 20);
-		frame.getContentPane().add(txtNome);
-		txtNome.setColumns(10);
+		txtNome.setBounds(55, 190, 495, 25);
+		janela.getContentPane().add(txtNome);		
 
-		JLabel lblNewLabel_2_1 = new JLabel("E-mail:");
-		lblNewLabel_2_1.setFont(new Font("Cambria", Font.PLAIN, 15));
-		lblNewLabel_2_1.setBounds(46, 246, 46, 14);
-		frame.getContentPane().add(lblNewLabel_2_1);
+		dtNascimento.setFont(new Font("Roboto", Font.PLAIN, 18));
+		dtNascimento.setBounds(55,230, 495, 30);
+		janela.getContentPane().add(dtNascimento);
+		
+			
+		
+		MaskFormatter mascaraData = null;
+		try {
+			mascaraData = new MaskFormatter("##/##/####");
+		} catch (ParseException ignore) {
+			//
+		}
+		if (mascaraData != null) {
+			mascaraData.setPlaceholderCharacter('_');
+		}
+				
+		txtNascimento = new JFormattedTextField(mascaraData);
+		dtNascimento.setLabelFor(dtNascimento);
+		txtNascimento.setBounds(55, 270, 495, 25);
+		janela.add(txtNascimento);	
 
-		txtEmail = new JTextField();
-		txtEmail.setColumns(10);
-		txtEmail.setBounds(46, 267, 335, 20);
-		frame.getContentPane().add(txtEmail);
+		email.setFont(new Font("Roboto", Font.PLAIN, 18));
+		email.setBounds(55, 310, 495, 30);
+		janela.getContentPane().add(email);
 
+		txtEmail = new JTextField();	
+		txtEmail.setBounds(55, 340, 495, 25);
+		janela.getContentPane().add(txtEmail);
+				
+		senha.setFont(new Font("Roboto", Font.PLAIN, 18));
+		senha.setBounds(55, 370, 500, 30);
+		janela.getContentPane().add(senha);
+
+		txtSenha.setBounds(55, 410, 495, 25);
+		janela.getContentPane().add(txtSenha);
 		
 
 		
+		check.setBackground(new Color(250,224,228));
+		check.setForeground(Color.BLACK);
+		check.setBorder(BorderFactory.createLineBorder(new Color(179,136,235), 2));
+		check.setFont(new Font("Digot", Font.PLAIN, 20));
+		check.setBounds(230, 480, 140, 50);
+		janela.getContentPane().add(check);
 
 		/**
 		 * Faz a verifica��o das verifica��es necess�rias de cada informa��o.
 		 */
-		JButton check = new JButton("OK");
-		check.setFont(new Font("Cambria", Font.PLAIN, 11));
-		check.setBackground(SystemColor.desktop);
-		check.setBounds(174, 559, 89, 23);
 		check.addActionListener(new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
@@ -120,7 +151,7 @@ public class TelaEditarUsuaria {
 				if (msgErro.length() > 0) {
 					JOptionPane.showMessageDialog(null, msgErro, "ERRO", JOptionPane.ERROR_MESSAGE);
 				} else {
-					JOptionPane.showMessageDialog(null, "Confirmar Edi��o", "Deseja Confirmar a Edi��o ?",
+					JOptionPane.showMessageDialog(null, "Confirmar Alteração", "Deseja Confirmar a Edi��o ?",
 							JOptionPane.DEFAULT_OPTION);
 
 					Dados.getPessoas().get(Dados.getPessoas().indexOf(TelaLoging.usuariaLogada)).editarDados(
@@ -132,47 +163,19 @@ public class TelaEditarUsuaria {
 			}
 		});
 
-		frame.getContentPane().add(check);
 
-		JLabel lblCadastro = new JLabel("Editar");
-		lblCadastro.setForeground(SystemColor.desktop);
-		lblCadastro.setFont(new Font("Elephant", Font.PLAIN, 37));
-		lblCadastro.setBounds(146, 25, 204, 75);
-		frame.getContentPane().add(lblCadastro);
-
-		JLabel tiruloUm_1 = new JLabel("Editar");
-		tiruloUm_1.setForeground(new Color(51, 204, 204));
-		tiruloUm_1.setFont(new Font("Elephant", Font.PLAIN, 37));
-		tiruloUm_1.setBounds(136, 11, 194, 75);
-		frame.getContentPane().add(tiruloUm_1);
+		
+		
+	
 	}
 
-	@SuppressWarnings("unused")
-	private static void addPopup(Component component, final JPopupMenu popup) {
-		component.addMouseListener(new MouseAdapter() {
-			public void mousePressed(MouseEvent e) {
-				if (e.isPopupTrigger()) {
-					showMenu(e);
-				}
-			}
-
-			public void mouseReleased(MouseEvent e) {
-				if (e.isPopupTrigger()) {
-					showMenu(e);
-				}
-			}
-
-			private void showMenu(MouseEvent e) {
-				popup.show(e.getComponent(), e.getX(), e.getY());
-			}
-		});
-	}
+	
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
 					TelaEditarUsuaria window = new TelaEditarUsuaria();
-					window.frame.setVisible(true);
+					window.janela.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}

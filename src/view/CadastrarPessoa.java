@@ -34,8 +34,9 @@ import java.text.ParseException;
 
 /**
  * Tela de cadastro de usuário.
- * @author Maria Abritta e Thyago Moura 
- * @version 1.0 (Abril 2022)
+ * @author Mylena e Sabrina 
+ * @since 2022
+ * @version 1.0 
  */
 public class CadastrarPessoa {
 	
@@ -147,11 +148,18 @@ public class CadastrarPessoa {
 		check.setBounds(230, 480, 140, 50);
 		janela.getContentPane().add(check);
 		
+		/**
+		 * Verificação dos dados inseridos pelo usuário
+		 */
+
 		check.addActionListener(new ActionListener() {
 
+			/* (non-Javadoc)
+			 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+			 */
 			@SuppressWarnings("deprecation")
 			public void actionPerformed(ActionEvent e) {
-				String msgErro = controller.verificaCadastro(txtNome.getText(), null, txtEmail.getText(),
+				String msgErro = controller.verificaCadastro(txtNome.getText(),txtDtNascimento.getText(), txtEmail.getText(),
 						senha.getText());
 
 				if (msgErro == null) {
@@ -191,28 +199,6 @@ public class CadastrarPessoa {
 
 		
 	}
-
-	@SuppressWarnings("unused")
-	private static void addPopup(Component component, final JPopupMenu popup) {
-		component.addMouseListener(new MouseAdapter() {
-			public void mousePressed(MouseEvent e) {
-				if (e.isPopupTrigger()) {
-					showMenu(e);
-				}
-			}
-
-			public void mouseReleased(MouseEvent e) {
-				if (e.isPopupTrigger()) {
-					showMenu(e);
-				}
-			}
-
-			private void showMenu(MouseEvent e) {
-				popup.show(e.getComponent(), e.getX(), e.getY());
-			}
-		});
-	}
-
 
 	public static JTextField getNome() {
 		return nome;

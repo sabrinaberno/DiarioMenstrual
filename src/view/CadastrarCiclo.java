@@ -1,4 +1,4 @@
-package vision;
+package view;
 
 import java.awt.event.ActionEvent;
 import java.text.ParseException;
@@ -15,12 +15,14 @@ import control.CadastrarCicloControl;
 
 
 /**
- * JPanel para cadastrar um filme.
+ *  Tela para cadastrar o ciclo do usuário
  * 
- * Herda a classe JCampos que cont�m um fundo, t�tulo e dois bot�es.
+ * @author Mylena e Sabrina
+ * @since 2022
+ * @version 1.0
  * 
- * @author Eduardo Rodrigues
  */
+
 public class CadastrarCiclo extends JCampos {
 	private static final long serialVersionUID = -7309653702183828956L;
 	private JComboBox<Object> fieldPessoa;
