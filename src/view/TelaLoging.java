@@ -3,23 +3,20 @@ package view;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-
 import java.awt.Font;
 import java.awt.Color;
 import java.awt.EventQueue;
-
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
-
-import control.CadastrarPessoaControl;
-
-import model.Pessoa;
-
 import javax.swing.JPasswordField;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+
+
+import control.CadastrarPessoaControl;
+import model.Pessoa;
 /**
  * Tela de login da pessoa
  * @author Mylena e Sabrina
@@ -28,17 +25,17 @@ import java.awt.event.ActionEvent;
 public class TelaLoging extends JFrame {
 
 	
-	private CadastrarPessoaControl controller;
+	CadastrarPessoaControl controller = new CadastrarPessoaControl();
 	private static final long serialVersionUID = 1L;
 	private JPanel painel = new JPanel();
 	private  JFrame janela = new JFrame("Login");
-	private JTextField textField = new JTextField();;
-	private JPasswordField passwordField = new JPasswordField();;
+	private JTextField email = new JTextField();;
+	private JPasswordField senha = new JPasswordField();;
 	static Pessoa usuariaLogada;
-	JLabel titulo = new JLabel("Loging");
+	JLabel titulo = new JLabel("Login");
 	JLabel descricao = new JLabel("Insira seus dados abaixo ");
 	JLabel txtEmail = new JLabel("Digite seu email:");
-	JLabel senha = new JLabel("Digite sua senha: ");
+	JLabel txtSenha = new JLabel("Digite sua senha: ");
 	JButton entrar = new JButton("Entrar");
 	
 	public static void main(String[] args) {
@@ -89,17 +86,17 @@ public class TelaLoging extends JFrame {
 		janela.getContentPane().add(txtEmail);
 
 
-		textField.setBounds(55, 190, 495, 25);
-		janela.getContentPane().add(textField);
+		email.setBounds(55, 190, 495, 25);
+		janela.getContentPane().add(email);
 
 		
-		senha.setFont(new Font("Roboto", Font.PLAIN, 18));
-		senha.setBounds(55, 235, 495, 35);
+		txtSenha.setFont(new Font("Roboto", Font.PLAIN, 18));
+		txtSenha.setBounds(55, 235, 495, 35);
+		janela.getContentPane().add(txtSenha);
+
+		
+		senha.setBounds(55, 265, 495, 25);
 		janela.getContentPane().add(senha);
-
-		
-		passwordField.setBounds(55, 265, 495, 25);
-		janela.getContentPane().add(passwordField);
 		
 
 		entrar.setBackground(new Color(250,224,228));
@@ -116,12 +113,13 @@ public class TelaLoging extends JFrame {
 		 */
 		@SuppressWarnings("deprecation")
 		public void actionPerformed(ActionEvent e) {				
-				TelaLoging.usuariaLogada = CadastrarPessoaControl.validarLogin(textField.getText(), passwordField.getText());
+				TelaLoging.usuariaLogada = CadastrarPessoaControl.validarLogin(email.getText(), senha.getText());
+				
 				if (TelaLoging.usuariaLogada == null) {
 					// login deu errado, refazer login
 				} else {
 					janela.dispose();
-					new TelaMenu();
+					TelaMenu.main(null);
 				}
 			}
 		});

@@ -138,9 +138,9 @@ public class TelaMenu {
 		janela.getContentPane().add(relatorio);
 	}
 
-	public static void dispose() {
+	/*public static void dispose() {
 		// TODO Auto-generated method stub
 		
-	}
+	}*/
 
 }
