@@ -1,88 +1,124 @@
 package view;
 
-import java.awt.event.ActionEvent;
-import java.text.ParseException;
+import java.awt.EventQueue;
 
-import javax.swing.JComboBox;
-import javax.swing.JFormattedTextField;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+import java.awt.Color;
 import javax.swing.JTextField;
-import javax.swing.SwingConstants;
+
+import javax.swing.border.EmptyBorder;
 import javax.swing.text.MaskFormatter;
 
 import control.CadastrarCicloControl;
+import model.Ciclo;
+import model.Dados;
 
+import javax.swing.BorderFactory;
+import javax.swing.JButton;
+import javax.swing.JFormattedTextField;
+
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.awt.Font;
+import java.text.ParseException;
 
 
 /**
- *  Tela para cadastrar o ciclo do usuário
- * 
- * @author Mylena e Sabrina
+ * Tela de cadastro de ciclo.
+ * @author Mylena e Sabrina 
  * @since 2022
- * @version 1.0
- * 
+ * @version 1.0 
  */
+public class CadastrarCiclo implements ActionListener {
+	
+	static Ciclo cicloCadastrado;
+	
+	CadastrarCicloControl controller = new CadastrarCicloControl();
+	private JPanel painel = new JPanel();
+	private  JFrame janela = new JFrame();	
+	JLabel titulo = new JLabel("Cadastrar ciclo");
+	JLabel descricao = new JLabel("Insira os dados do seu ciclo abaixo ");
+	JLabel txtInicio = new JLabel("Data do início da menstruação:");
+	JLabel txtFinal = new JLabel("Data do final da menstruação: ");
+	JLabel txtDuracao = new JLabel("Quantos dias dura em média o seu ciclo? ");
+	JLabel txtDuracao2 = new JLabel("(Por duração do ciclo, compreende-se os dias entre uma menstruação e outra) ");
+	JLabel txtDuracao3 = new JLabel("Caso não tenha ideia, considere que um ciclo tem duração média de 28 dias  ");
+	JLabel txtNumero = new JLabel("Qual o número desse ciclo? ");
+	JButton check = new JButton("Cadastrar");
+	static JButton cancelar = new JButton("Cancelar");	
+	JButton buscarCiclo = new JButton("Buscar Ciclo");
+	public static JTextField duracao;
+	public static JTextField numero;
+	public static JFormattedTextField dtInicio;
+	public static JFormattedTextField dtFinal;
+	
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					CadastrarCiclo window = new CadastrarCiclo();
+					window.janela.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+	
 
-public class CadastrarCiclo extends JCampos {
-	private static final long serialVersionUID = -7309653702183828956L;
-	private JComboBox<Object> fieldPessoa;
-	private JTextField fieldNumero;
-	private JTextField fieldDuracao;	
-	private JFormattedTextField fiedlDataFinal;
-	private JFormattedTextField fieldDataInicio;
-	private CadastrarCicloControl controller;
-
-	/**
-	 * Cria o panel com os campos para cadastro.
-	 */
 	public CadastrarCiclo() {
-		super("Cadastre um novo ciclo");
-
-		controller = new CadastrarCicloControl(this);
-
-		JLabel labelNome = new JLabel("Número do ciclo:");
-		labelNome.setHorizontalAlignment(SwingConstants.RIGHT);
-		labelNome.setFont(JCampos.FONT);
-		labelNome.setBounds(169, 172, 175, 13);
-		add(labelNome);
-
-		JLabel labelInicio = new JLabel("Data início menstruação:");
-		labelInicio.setHorizontalAlignment(SwingConstants.RIGHT);
-		labelInicio.setFont(JCampos.FONT);
-		labelInicio.setBounds(169, 204, 175, 13);
-		add(labelInicio);
-
-		JLabel labelDuracao = new JLabel("Duração:");
-		labelDuracao.setFont(JCampos.FONT);
-		labelDuracao.setHorizontalAlignment(SwingConstants.RIGHT);
-		labelDuracao.setBounds(169, 236, 175, 13);
-		add(labelDuracao);
 		
-		JLabel labelFinal = new JLabel("Data final menstruação:");
-		labelFinal.setFont(JCampos.FONT);
-		labelFinal.setHorizontalAlignment(SwingConstants.RIGHT);
-		labelFinal.setBounds(169, 268, 175, 13);
-		add(labelFinal);
+		janela.setBounds(100, 100, 600, 600);
+		janela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		janela.getContentPane().setLayout(null);		
+		painel.setBorder(new EmptyBorder(5, 5, 5, 5));
+		janela.setContentPane(painel);
+		painel.setBorder(new EmptyBorder(5, 5, 5, 5));
+		
+		janela.setLayout(null);
+		janela.setVisible(true);
+
+
+		titulo.setForeground(new Color(240,92,138));
+		titulo.setFont(new Font("Didot", Font.PLAIN, 45));
+		titulo.setBounds(150, 40, 600, 50);
+		janela.getContentPane().add(titulo);	
 
 		
+		descricao.setForeground(Color.BLACK);
+		descricao.setFont(new Font("Roboto", Font.PLAIN, 20));
+		descricao.setBounds(140, 95, 400, 50);
+		janela.getContentPane().add(descricao);
 
-		fieldNumero = new JTextField();
-		fieldNumero.setBounds(405, 169, 147, 19);
-		add(fieldNumero);
-		fieldNumero.setColumns(10);
-
-		fieldPessoa = new JComboBox<>();
-		labelNome.setLabelFor(fieldPessoa);
-		fieldPessoa.setBounds(405, 200, 147, 21);
-		fieldPessoa.setModel(controller.atualizarModelo());
-		add(fieldPessoa);
-
-		fieldDuracao = new JTextField();
-		labelDuracao.setLabelFor(fieldDuracao);
-		fieldDuracao.setBounds(405, 236, 147, 19);
-		add(fieldDuracao);
-		fieldDuracao.setColumns(10);
-
+				
+		txtInicio.setFont(new Font("Roboto", Font.PLAIN, 18));
+		txtInicio.setBounds(55, 160, 370, 30);
+		janela.getContentPane().add(txtInicio);
+		
+		txtFinal.setFont(new Font("Roboto", Font.PLAIN, 18));
+		txtFinal.setBounds(55,230, 370, 30);
+		janela.getContentPane().add(txtFinal);
+		
+		
+		txtDuracao.setFont(new Font("Roboto", Font.PLAIN, 18));
+		txtDuracao.setBounds(55, 300, 370, 30);
+		janela.getContentPane().add(txtDuracao);
+		
+		txtDuracao2.setFont(new Font("Roboto", Font.PLAIN, 15));
+		txtDuracao2.setBounds(35, 320, 600, 30);
+		janela.getContentPane().add(txtDuracao2);
+		
+		txtDuracao3.setFont(new Font("Roboto", Font.PLAIN, 15));
+		txtDuracao3.setBounds(35, 340, 600, 30);
+		janela.getContentPane().add(txtDuracao3);
+		
+		txtNumero .setFont(new Font("Roboto", Font.PLAIN, 18));
+		txtNumero .setBounds(55, 410, 500, 30);
+		janela.getContentPane().add(txtNumero );
+		
 		MaskFormatter mascaraData = null;
 		try {
 			mascaraData = new MaskFormatter("##/##/####");
@@ -93,56 +129,136 @@ public class CadastrarCiclo extends JCampos {
 			mascaraData.setPlaceholderCharacter('_');
 		}
 		
-		fieldDataInicio = new JFormattedTextField(mascaraData);
-		labelInicio.setLabelFor(fieldDataInicio);
-		fieldDataInicio.setBounds(405, 272, 147, 19);
-		add(fieldDataInicio);
+		dtInicio= new JFormattedTextField(mascaraData);
+		txtInicio.setLabelFor(txtInicio);
+		dtInicio.setBounds(55, 190, 370, 20);
+		janela.add(dtInicio);	
 		
-		fiedlDataFinal = new JFormattedTextField(mascaraData);
-		labelFinal.setLabelFor(fiedlDataFinal);
-		fiedlDataFinal.setBounds(405, 308, 147, 19);
-		add(fiedlDataFinal);
+		dtFinal= new JFormattedTextField(mascaraData);
+		txtFinal.setLabelFor(txtFinal);
+		dtFinal.setBounds(55, 260, 370, 20);
+		janela.add(dtFinal);	
+		
+		duracao = new JTextField();
+		duracao.setBounds(55, 370, 495, 25);
+		janela.getContentPane().add(duracao);
 
+		numero = new JTextField();	
+		numero.setBounds(55, 440, 495, 25);
+		janela.getContentPane().add(numero);
+		
+		cancelar.setBackground(Color.LIGHT_GRAY);
+		cancelar.setForeground(Color.BLACK);
+		cancelar.addActionListener(this);
+		cancelar.setBorder(BorderFactory.createLineBorder(new Color(179,136,235), 2));
+		cancelar.setFont(new Font("Digot", Font.PLAIN, 20));
+		cancelar.setBounds(50, 480, 100, 50);
+		janela.getContentPane().add(cancelar);
+	
+		
 
-	}		
-
-
-	public JComboBox<Object> getFieldPessoa() {
-		return fieldPessoa;
+		check.setBackground(new Color(250,224,228));
+		check.setForeground(Color.BLACK);
+		check.addActionListener(this);
+		check.setBorder(BorderFactory.createLineBorder(new Color(179,136,235), 2));
+		check.setFont(new Font("Digot", Font.PLAIN, 20));
+		check.setBounds(200, 480, 100, 50);
+		janela.getContentPane().add(check);
+		
+		
+		buscarCiclo.setBackground(new Color(250,224,228));
+		buscarCiclo.setForeground(Color.BLACK);
+		buscarCiclo.addActionListener(this);
+		buscarCiclo.setBorder(BorderFactory.createLineBorder(new Color(179,136,235), 2));
+		buscarCiclo.setFont(new Font("Digot", Font.PLAIN, 20));
+		buscarCiclo.setBounds(350, 480, 150, 50);
+		janela.getContentPane().add(buscarCiclo);
+			
+				
+			
+				
 	}
 
-	public JTextField getFieldNome() {
-		return fieldNumero;
+
+	public static JTextField getDuracao() {
+		return duracao;
 	}
 
-	public JTextField getFieldDuracao() {
-		return fieldDuracao;
+
+
+
+	public static JTextField getNumero() {
+		return numero;
+	}
+
+
+	
+
+
+	public static JFormattedTextField getDtInicio() {
+		return dtInicio;
 	}
 	
-	public JFormattedTextField getFieldDataFinal() {
-		return fiedlDataFinal;
-
-	}
 
 
-
-	public JFormattedTextField getFieldDataInicio() {
-		return fieldDataInicio;
-
+	public static JFormattedTextField getDtFinal() {
+		return dtFinal;
 	}
 	
-
-	public CadastrarCicloControl getController() {
-		return controller;
+	public JButton getCheck() {
+		return check;
 	}
 
-	/**
-	 * Executa o comando para o bot�o selecionado.
-	 * 
-	 * implementa��o da interface ActionListener
-	 */
-	@Override
+
+
+
+	public static JButton getCancelar() {
+		return cancelar;
+	}
+
+
+	
+
 	public void actionPerformed(ActionEvent e) {
 		controller.executarBotao(e.getSource());
+		Object src = e.getSource();		
+		if (src == buscarCiclo) {
+			janela.dispose();
+			TelaBuscarCiclo.main(null);
+		}
+		
+		CadastrarCiclo.cicloCadastrado = CadastrarCicloControl.validarCadastro(numero.getText());
+		if (CadastrarCiclo.cicloCadastrado == null) {
+			
+		} else {
+			janela.dispose();
+			TelaMenu.main(null);
+		}
 	}
-}
+
+	
+public static Ciclo validarBusca(String numero) {
+		
+		for (Ciclo c : Dados.getCiclos()) {
+			if (c.getNumero().equals(numero)) {
+				return c;
+			}
+		}
+		return null;
+
+	}
+
+
+
+
+
+
+
+	
+	}
+	
+ 
+	
+
+
+
