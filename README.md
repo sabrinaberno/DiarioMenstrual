@@ -6,5 +6,12 @@
 <p> Este é o repositório do MiniProjeto em Java da matéria Orientação a Objetos. Ele deverá ser executado em um computador, ou seja, não se trata de um aplicativo para celular. Além disso, o software não deverá prever conexão com a internet. Em outras palavras, trata-se de um software standalone para desktop. </p>
 
 <h3 align="center">
-    <a href="https://lucid.app/lucidchart/c46dd22b-9a56-4dd3-a3ac-786462977949/edit?viewport_loc=-225%2C65%2C2245%2C1010%2Chl9vJKBEqBQA&invitationId=inv_c830b462-c58d-4ee2-836e-8e6a991cb6ce#">🔗 LucidChart</a>
+    <a href="https://lucid.app/lucidchart/ca9ef0da-87ec-4cde-84fb-f4a15379b971/edit?viewport_loc=43%2C63%2C1707%2C768%2C0_0&invitationId=inv_3295b1fb-399b-4d80-9d85-c65ad5b0ce13#">🔗 LucidChart</a>
 </h3>
+
+<img src="imagens_read/Read me OO.png" />
+<img src="imagens_read/Read me OO (1).png" />
+<img src="imagens_read/Read me OO (2).png" />
+<img src="imagens_read/Read me OO (3).png" />
+<img src="imagens_read/Read me OO (4).png" />
+<img src="imagens_read/Read me OO (5).png" />
